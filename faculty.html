@@ -150,7 +150,6 @@
   <h2 class="title">Our Faculty</h2>
   <p class="subtitle">Search, filter, and explore our experienced faculty members</p>
 
-  <!-- Controls -->
   <div class="controls">
     <input type="text" id="searchBox" placeholder="Search by name...">
     <select id="departmentFilter">
@@ -162,7 +161,6 @@
     </select>
   </div>
 
-  <!-- Faculty Grid -->
   <div class="faculty-grid" id="facultyGrid"></div>
 </div>
 
@@ -171,8 +169,9 @@
 </footer>
 
 <script>
+  // Static faculty data
   const facultyData = [
-    { name: "Rajanala Srinivas", principal department: "Mathematics", qualification: "M.Sc, B.Ed", image: "assets/img/SRINU (2).jpg" },
+    { name: "Rajanala Srinivas", department: "Mathematics", qualification: "M.Sc, B.Ed", image: "assets/img/SRINU (2).jpg" },
     { name: "Dr. Lakshmi Reddy", department: "Physics", qualification: "M.Sc, Ph.D", image: "assets/img/faculty/f2.jpg" },
     { name: "Kiran Kumar", department: "Commerce", qualification: "M.Com", image: "assets/img/faculty/f3.jpg" },
     { name: "Priya Sharma", department: "Computer Science", qualification: "MCA", image: "assets/img/faculty/f4.jpg" },
@@ -190,24 +189,29 @@
 
     facultyGrid.innerHTML = "";
 
-    facultyData
-      .filter(f => 
-        (filterDept === "all" || f.department === filterDept) &&
-        f.name.toLowerCase().includes(searchText)
-      )
-      .forEach(f => {
-        const card = document.createElement("div");
-        card.classList.add("faculty-card");
-        card.innerHTML = `
-          <img src="${f.image}" class="faculty-img" alt="${f.name}">
-          <div class="faculty-info">
-            <h3>${f.name}</h3>
-            <p><strong>Department:</strong> ${f.department}</p>
-            <p><strong>Qualification:</strong> ${f.qualification}</p>
-          </div>
-        `;
-        facultyGrid.appendChild(card);
-      });
+    const filteredFaculty = facultyData.filter(f => 
+      (filterDept === "all" || f.department === filterDept) &&
+      f.name.toLowerCase().includes(searchText)
+    );
+
+    if (filteredFaculty.length === 0) {
+      facultyGrid.innerHTML = '<p style="text-align: center; color: #666;">No faculty members found matching your criteria.</p>';
+      return;
+    }
+
+    filteredFaculty.forEach(f => {
+      const card = document.createElement("div");
+      card.classList.add("faculty-card");
+      card.innerHTML = `
+        <img src="${f.image}" class="faculty-img" alt="${f.name}">
+        <div class="faculty-info">
+          <h3>${f.name}</h3>
+          <p><strong>Department:</strong> ${f.department || 'N/A'}</p>
+          <p><strong>Qualification:</strong> ${f.qualification || 'N/A'}</p>
+        </div>
+      `;
+      facultyGrid.appendChild(card);
+    });
   }
 
   searchBox.addEventListener("input", renderFaculty);
@@ -218,4 +222,3 @@
 
 </body>
 </html>
-
