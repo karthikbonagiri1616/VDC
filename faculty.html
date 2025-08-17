@@ -3,20 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaagdevi Junior & Degree College, Boath</title>
+  <title>Our Faculty - Vaagdevi Junior & Degree College, Boath</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+
+    header {
+      position: relative;
+    }
+
+    .banner {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .navbar {
+      background: #003366;
+      padding: 12px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .navbar li {
+      margin: 5px 12px;
+    }
+
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover, .active {
+      color: #ffcc00;
+    }
+
+    .container {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    h2 {
+      color: #003366;
+      margin-bottom: 10px;
+    }
+
+    .faculty-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .faculty-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .faculty-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .faculty-card h3 {
+      color: #003366;
+      margin-bottom: 8px;
+    }
+
+    .faculty-card p {
+      margin: 4px 0;
+      color: #444;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header with Banner -->
+<!-- Header -->
 <header>
   <img src="assets/img/d.jpg" alt="College Banner" class="banner">
   <nav class="navbar">
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="management.html">Management</a></li>
-      <li><a href="faculty.html">Faculty</a></li>
+      <li><a href="faculty.html" class="active">Faculty</a></li>
       <li><a href="Courses.html">Courses</a></li>
       <li><a href="Notice board.html">Notice Board</a></li>
       <li><a href="nss.html">NSS</a></li>
@@ -27,33 +121,42 @@
   </nav>
 </header>
 
+<!-- Faculty Section -->
+<div class="container">
+  <h2>Our Faculty</h2>
+  <p>Meet our highly qualified and dedicated faculty members.</p>
 
-</section>
+  <div class="faculty-grid">
+    <div class="faculty-card">
+      <h3>Faculty Name 1</h3>
+      <p><strong>Department:</strong> Mathematics</p>
+      <p><strong>Qualification:</strong> M.Sc, B.Ed</p>
+    </div>
 
-  <div class="container">
-    <h2>Our Faculty</h2>
-    <p>Experienced and dedicated faculty guiding students towards excellence.</p>
+    <div class="faculty-card">
+      <h3>Faculty Name 2</h3>
+      <p><strong>Department:</strong> Physics</p>
+      <p><strong>Qualification:</strong> M.Sc, Ph.D</p>
+    </div>
 
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th>Department</th>
-          <th>Qualification</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Faculty Name 1</td><td>Mathematics</td><td>M.Sc, B.Ed</td></tr>
-        <tr><td>Faculty Name 2</td><td>Physics</td><td>M.Sc, Ph.D</td></tr>
-        <tr><td>Faculty Name 3</td><td>Commerce</td><td>M.Com</td></tr>
-        <tr><td>Faculty Name 4</td><td>Computer Science</td><td>MCA</td></tr>
-      </tbody>
-    </table>
+    <div class="faculty-card">
+      <h3>Faculty Name 3</h3>
+      <p><strong>Department:</strong> Commerce</p>
+      <p><strong>Qualification:</strong> M.Com</p>
+    </div>
+
+    <div class="faculty-card">
+      <h3>Faculty Name 4</h3>
+      <p><strong>Department:</strong> Computer Science</p>
+      <p><strong>Qualification:</strong> MCA</p>
+    </div>
   </div>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
+</footer>
+
 </body>
-
 </html>
