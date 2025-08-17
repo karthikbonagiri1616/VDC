@@ -3,62 +3,187 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaagdevi Junior & Degree College, Boath</title>
+  <title>Courses | Vaagdevi Junior & Degree College, Boath</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f8fafc;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      position: relative;
+    }
+    .banner {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-bottom: 5px solid #0056b3;
+    }
+    .navbar {
+      background: #004080;
+      padding: 12px 0;
+    }
+    .navbar ul {
+      margin: 0; padding: 0;
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .navbar li {
+      margin: 5px 15px;
+    }
+    .navbar a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .navbar a:hover {
+      color: #ffcc00;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #004080;
+    }
+    .course-section {
+      margin-bottom: 40px;
+    }
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .course-card {
+      background: #fff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .course-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .course-card h3 {
+      color: #0056b3;
+      margin-bottom: 10px;
+    }
+    .course-card ul {
+      padding-left: 20px;
+      margin: 0;
+    }
+    footer {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header with Banner -->
+<!-- Header -->
 <header>
   <img src="assets/img/d.jpg" alt="College Banner" class="banner">
   <nav class="navbar">
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="management.html">Management</a></li>
       <li><a href="faculty.html">Faculty</a></li>
-      <li><a href="courses.html">Courses</a></li>
+      <li><a href="courses.html" class="active">Courses</a></li>
       <li><a href="notice.html">Notice Board</a></li>
       <li><a href="nss.html">NSS</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Admission.html">Admissions</a></li>
-      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="admission.html">Admissions</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
+<!-- Content -->
+<div class="container">
+  <h2>Courses Offered</h2>
 
-</section>
-
-  <div class="container">
-    <h2>Courses Offered</h2>
-
+  <!-- Junior College -->
+  <section class="course-section">
     <h3>Intermediate (Junior College)</h3>
-    <ul>
-      <li>MPC</li>
-      <li>BiPC</li>
-      <li>CEC</li>
-      <li>MEC</li>
-    </ul>
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>MPC</h3>
+        <p>Maths, Physics, Chemistry</p>
+      </div>
+      <div class="course-card">
+        <h3>BiPC</h3>
+        <p>Biology, Physics, Chemistry</p>
+      </div>
+      <div class="course-card">
+        <h3>CEC</h3>
+        <p>Civics, Economics, Commerce</p>
+      </div>
+      <div class="course-card">
+        <h3>MEC</h3>
+        <p>Maths, Economics, Commerce</p>
+      </div>
+    </div>
+  </section>
 
+  <!-- Degree Programs -->
+  <section class="course-section">
     <h3>Degree Programs</h3>
-    <ul>
-      <li>B.Sc (Maths / Physics / Computer Science)</li>
-        <li>B.Sc (Maths / Physics / Chemistry)</li>
-        <li>B.Sc (Botany / Zoology/ Computer Science )</li>
-        <li>B.Sc (Botany / Zoology/ Chemistry)</li>
-        <li>B.Sc (Food and Nutrition / Zoology / Chemistry)</li>
-      <li>B.Com (Computer Applications)</li>
-      <li>B.A (History, Economics, Computer Applications)</li>
-      <li>B.A (History, Economics, political Science)</li>
-    </ul>
-  </div>
+    <div class="course-grid">
+      <div class="course-card">
+        <h3>B.Sc MPCS</h3>
+        <p>Maths, Physics, Computer Science</p>
+      </div>
+      <div class="course-card">
+        <h3>B.Sc MPC</h3>
+        <p>Maths, Physics, Chemistry</p>
+      </div>
+      <div class="course-card">
+        <h3>B.Sc BZCS</h3>
+        <p>Botany, Zoology, Computer Science</p>
+      </div>
+      <div class="course-card">
+        <h3>B.Sc BZC</h3>
+        <p>Botany, Zoology, Chemistry</p>
+      </div>
+      <div class="course-card">
+        <h3>B.Sc FNZC</h3>
+        <p>Food & Nutrition, Zoology, Chemistry</p>
+      </div>
+      <div class="course-card">
+        <h3>B.Com (CA)</h3>
+        <p>Commerce with Computer Applications</p>
+      </div>
+      <div class="course-card">
+        <h3>B.A HECA</h3>
+        <p>History, Economics, Computer Applications</p>
+      </div>
+      <div class="course-card">
+        <h3>B.A HEP</h3>
+        <p>History, Economics, Political Science</p>
+      </div>
+    </div>
+  </section>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath<br>
-    Website Designed By Karthik Bonagiri- 9014443040</p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath<br>
+  Website Designed By Karthik Bonagiri - 9014443040</p>
+</footer>
+
 </body>
-
 </html>
-
