@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Faculty Name 1",
+    "department": "Mathematics",
+    "qualification": "M.Sc, B.Ed"
+  },
+  {
+    "name": "Faculty Name 2",
+    "department": "Physics",
+    "qualification": "M.Sc, Ph.D"
+  },
+  {
+    "name": "Faculty Name 3",
+    "department": "Commerce",
+    "qualification": "M.Com"
+  },
+  {
+    "name": "Faculty Name 4",
+    "department": "Computer Science",
+    "qualification": "MCA"
+  }
+]
