@@ -1,185 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaagdevi Junior & Degree College, Boath</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-
-<!-- Header with Banner -->
-<header>
-  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="management.html">Management</a></li>
-      <li><a href="faculty.html">Faculty</a></li>
-      <li><a href="Courses.html">Courses</a></li>
-      <li><a href="Notice board.html">Notice Board</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Admission.html">Admissions</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-</section>
-
-    header {
-      text-align: center;
-      background: #003366;
-      padding: 20px;
-      color: white;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    nav {
-      margin-top: 10px;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover, .active {
-      color: #ffcc00;
-    }
-
-    .container {
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .container h2 {
-      font-size: 32px;
-      color: #003366;
-      margin-bottom: 10px;
-    }
-
-    .container p {
-      font-size: 16px;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .faculty-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
-
-    .faculty-card {
-      background: white;
-      border-radius: 16px;
-      width: 260px;
-      padding: 20px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: all 0.3s ease;
-    }
-
-    .faculty-card:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .faculty-img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #003366;
-    }
-
-    .faculty-card h3 {
-      font-size: 20px;
-      color: #003366;
-      margin-bottom: 6px;
-    }
-
-    .faculty-card p {
-      margin: 4px 0;
-      font-size: 14px;
-      color: #555;
-    }
-
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 14px;
-      margin-top: 40px;
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Vaagdevi Junior & Degree College, Boath</h1>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="management.html">Management</a>
-    <a href="faculty.html" class="active">Faculty</a>
-    <a href="courses.html">Courses</a>
-    <a href="gallery.html">Gallery</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<div class="container">
-  <h2>Our Faculty</h2>
-  <p>Meet our dedicated and experienced faculty members who guide students to success.</p>
-
-  <div class="faculty-grid" id="facultyGrid">
-    <!-- Cards load dynamically -->
-  </div>
-</div>
-
-<footer>
-  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
-</footer>
-
-<script>
-  const facultyData = [
-    { name: "Rajanala Srinivas", department: "Mathematics", qualification: "M.Sc, B.Ed", image: "assets/img/SRINU (2).jpg" },
-    { name: "Faculty Name 2", department: "Physics", qualification: "M.Sc, Ph.D", image: "assets/img/faculty/f2.jpg" },
-    { name: "Faculty Name 3", department: "Commerce", qualification: "M.Com", image: "assets/img/faculty/f3.jpg" },
-    { name: "Faculty Name 4", department: "Computer Science", qualification: "MCA", image: "assets/img/faculty/f4.jpg" }
-  ];
-
-  const facultyGrid = document.getElementById("facultyGrid");
-
-  facultyData.forEach(f => {
-    const card = document.createElement("div");
-    card.classList.add("faculty-card");
-    card.innerHTML = `
-      <img src="${f.image}" class="faculty-img" alt="${f.name}">
-      <h3>${f.name}</h3>
-      <p><strong>Department:</strong> ${f.department}</p>
-      <p><strong>Qualification:</strong> ${f.qualification}</p>
-    `;
-    facultyGrid.appendChild(card);
-  });
-</script>
-
-</body>
-</html>
-
-
+[
+  {
+    "name": "Rajanala Srinivas",
+    "department": "Mathematics",
+    "qualification": "M.Sc, B.Ed",
+    "image": "assets/img/faculty/srinu.jpg"
+  },
+  {
+    "name": "Faculty Name 2",
+    "department": "Physics",
+    "qualification": "M.Sc, Ph.D",
+    "image": "assets/img/faculty/f2.jpg"
+  },
+  {
+    "name": "Faculty Name 3",
+    "department": "Commerce",
+    "qualification": "M.Com",
+    "image": "assets/img/faculty/f3.jpg"
+  },
+  {
+    "name": "Faculty Name 4",
+    "department": "Computer Science",
+    "qualification": "MCA",
+    "image": "assets/img/faculty/f4.jpg"
+  }
+]
