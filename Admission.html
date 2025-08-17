@@ -4,13 +4,90 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vaagdevi Junior & Degree College, Boath</title>
-  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Base Reset */
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', sans-serif;}
+    body {background:#f5f7fa; color:#333; line-height:1.6;}
+
+    /* Header */
+    header {position:relative;}
+    .banner {
+      width:100%; height:280px; object-fit:cover;
+      display:block; filter:brightness(70%);
+    }
+    .hero-text {
+      position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+      color:#fff; text-align:center;
+    }
+    .hero-text h1 {font-size:2.5rem; text-shadow:2px 2px 6px rgba(0,0,0,.6);}
+    .hero-text p {margin-top:10px; font-size:1.2rem;}
+
+    /* Navbar */
+    .navbar {
+      background:#004aad; padding:12px 0; position:sticky; top:0; z-index:1000;
+    }
+    .navbar ul {display:flex; justify-content:center; flex-wrap:wrap; list-style:none;}
+    .navbar li {margin:0 12px;}
+    .navbar a {
+      text-decoration:none; color:#fff; font-weight:500;
+      padding:6px 12px; border-radius:4px; transition:.3s;
+    }
+    .navbar a:hover, .navbar .active {background:#fff; color:#004aad;}
+
+    /* Container */
+    .container {max-width:1100px; margin:40px auto; padding:20px;}
+
+    /* Card */
+    .card {
+      background:#fff; border-radius:12px; padding:25px; 
+      box-shadow:0 4px 12px rgba(0,0,0,0.08); margin-bottom:20px;
+      animation: fadeInUp 1s ease;
+    }
+    .card h2 {margin-bottom:15px; color:#004aad;}
+
+    /* Form */
+    form p {margin-bottom:15px;}
+    input, select, textarea {
+      width:100%; padding:12px; border:1px solid #ccc; border-radius:6px;
+      transition:.3s;
+    }
+    input:focus, select:focus, textarea:focus {border-color:#004aad; outline:none;}
+    button {
+      padding:12px 20px; border:none; border-radius:6px;
+      background:#004aad; color:#fff; font-size:1rem; cursor:pointer;
+      transition:.3s;
+    }
+    button:hover {background:#00337a;}
+
+    /* Footer */
+    footer {
+      background:#222; color:#bbb; text-align:center;
+      padding:20px; margin-top:40px;
+    }
+    footer small {display:block; margin-top:6px; font-size:.85rem; color:#888;}
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from {opacity:0; transform:translateY(20px);}
+      to {opacity:1; transform:translateY(0);}
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .hero-text h1 {font-size:1.8rem;}
+      .hero-text p {font-size:1rem;}
+    }
+  </style>
 </head>
 <body>
 
 <!-- Header with Banner -->
 <header>
   <img src="assets/img/d.jpg" alt="College Banner" class="banner">
+  <div class="hero-text">
+    <h1>Vaagdevi Junior & Degree College</h1>
+    <p>Boath – Excellence in Education & Defence Academy</p>
+  </div>
   <nav class="navbar">
     <ul>
       <li><a href="index.html" class="active">Home</a></li>
@@ -21,61 +98,67 @@
       <li><a href="notice.html">Notice Board</a></li>
       <li><a href="nss.html">NSS</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Admission.html">Admissions</a></li>
+      <li><a href="admission.html">Admissions</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
-  <div class="container">
-    <section class="card intro">
-    <left><h2>Admission Enquiry</h2>
-    <form action="#" method="post" onsubmit="alert('Form submitted (demo). Connect to Google Forms or backend to collect data.'); return false;">
+<!-- Admission Enquiry -->
+<div class="container">
+  <section class="card">
+    <h2>Admission Enquiry</h2>
+    <form onsubmit="submitForm(event)">
       <p>
         <label>Student Name<br>
-        <input type="text" name="name" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px;"></label>
+        <input type="text" name="name" required></label>
       </p>
       <p>
         <label>Parent/Guardian Name<br>
-        <input type="text" name="parent" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px;"></label>
+        <input type="text" name="parent" required></label>
       </p>
       <p>
         <label>Phone Number<br>
-        <input type="tel" name="phone" required style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px;"></label>
+        <input type="tel" name="phone" required></label>
       </p>
       <p>
         <label>Course Interested<br>
-        <select name="course" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px;">
+        <select name="course" required>
+          <option value="">-- Select Course --</option>
           <option>Intermediate - MPC</option>
           <option>Intermediate - BiPC</option>
           <option>Intermediate - CEC</option>
           <option>Intermediate - MEC</option>
           <option>Degree - B.Sc MPCS</option>
-           <option>Degree - B.Sc MPC</option>
-           <option>Degree - B.Sc BZCS</option>
-           <option>Degree - B.Sc BZC</option>
-           <option>Degree - B.Sc FNZC</option>
+          <option>Degree - B.Sc MPC</option>
+          <option>Degree - B.Sc BZCS</option>
+          <option>Degree - B.Sc BZC</option>
+          <option>Degree - B.Sc FNZC</option>
           <option>Degree - B.Com Computer Applications</option>
           <option>Degree - B.A HECA</option>
-           <option>Degree - B.A HEP</option>
+          <option>Degree - B.A HEP</option>
         </select></label>
       </p>
       <p>
         <label>Message<br>
-        <textarea name="message" rows="4" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:6px;"></textarea></label>
+        <textarea name="message" rows="4"></textarea></label>
       </p>
       <button type="submit">Submit</button>
     </form>
-  </div></left>
+  </section>
+</div>
 
-  <footer>
-    <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath<br><small>Website Designed By Karthik Bonagiri - 9014443040</small></p>
-  </footer>
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
+  <small>Website Designed By Karthik Bonagiri - 9014443040</small>
+</footer>
+
+<script>
+  function submitForm(e) {
+    e.preventDefault();
+    alert("Form submitted successfully (demo). Connect this form to Google Sheets, Email, or Backend.");
+  }
+</script>
 </body>
 </html>
-
-```
-
-
-
-
