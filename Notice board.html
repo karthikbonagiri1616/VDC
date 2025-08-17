@@ -3,12 +3,148 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaagdevi Junior & Degree College, Boath</title>
+  <title>Notice Board | Vaagdevi Junior & Degree College, Boath</title>
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background: #f7faff;
+      color: #333;
+    }
+    header {
+      position: relative;
+      text-align: center;
+    }
+    header .banner {
+      width: 100%;
+      max-height: 250px;
+      object-fit: cover;
+    }
+    .navbar {
+      background: #003366;
+      padding: 10px 0;
+    }
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0; padding: 0;
+      flex-wrap: wrap;
+    }
+    .navbar ul li {
+      margin: 0 12px;
+    }
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: color .3s;
+    }
+    .navbar ul li a:hover {
+      color: #ffcc00;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    /* News ticker */
+    .ticker {
+      overflow: hidden;
+      background: #003366;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      position: relative;
+    }
+    .ticker span {
+      display: inline-block;
+      padding-right: 50px;
+      animation: ticker 15s linear infinite;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    thead {
+      background: #003366;
+      color: #fff;
+    }
+    th, td {
+      padding: 12px;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    tbody tr:hover {
+      background: #f1f6ff;
+    }
+
+    /* Notice cards */
+    .notice-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+    }
+    .notice-card {
+      background: #f9fbff;
+      border-left: 5px solid #003366;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+    .notice-card:hover {
+      transform: translateY(-4px);
+    }
+    .notice-date {
+      font-size: 14px;
+      color: #666;
+      margin-bottom: 5px;
+    }
+    .notice-title {
+      font-size: 16px;
+      font-weight: bold;
+      color: #003366;
+    }
+    .notice-desc {
+      font-size: 14px;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+      background: #003366;
+      color: white;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
 
-<!-- Header with Banner -->
+<!-- Header -->
 <header>
   <img src="assets/img/d.jpg" alt="College Banner" class="banner">
   <nav class="navbar">
@@ -17,45 +153,64 @@
       <li><a href="about.html">About</a></li>
       <li><a href="management.html">Management</a></li>
       <li><a href="faculty.html">Faculty</a></li>
-      <li><a href="Courses.html">Courses</a></li>
-      <li><a href="Notice board.html">Notice Board</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="notice.html">Notice Board</a></li>
       <li><a href="nss.html">NSS</a></li>
       <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Admission.html">Admissions</a></li>
-      <li><a href="Contact.html">Contact</a></li>
+      <li><a href="admission.html">Admissions</a></li>
+      <li><a href="contact.html">Contact</a></li>
     </ul>
   </nav>
 </header>
 
+<!-- Main Section -->
+<div class="container">
+  <h2>Notice Board</h2>
 
-</section>
-
-  <div class="container">
-    <h2>Notice Board</h2>
-
-    <div class="ticker">
-      <span>Admissions Open 2025–26</span>
-      <span>Orientation on 20 Aug 2025</span>
-      <span>NSS Registrations in Progress</span>
-      <span>Internal Exams from 10 Sep 2025</span>
-    </div>
-
-    <table class="table" style="margin-top: 12px;">
-      <thead>
-        <tr><th>Date</th><th>Title</th><th>Description</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>15 Aug 2025</td><td>Independence Day</td><td>Flag hoisting at 8:30 AM</td></tr>
-        <tr><td>20 Aug 2025</td><td>Orientation</td><td>All new students report to auditorium</td></tr>
-        <tr><td>10 Sep 2025</td><td>Internal Exams</td><td>Time-table to be announced</td></tr>
-      </tbody>
-    </table>
+  <!-- Ticker -->
+  <div class="ticker">
+    <span>Admissions Open 2025–26</span>
+    <span>Orientation on 20 Aug 2025</span>
+    <span>NSS Registrations in Progress</span>
+    <span>Internal Exams from 10 Sep 2025</span>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
-  </footer>
+  <!-- Notice Table -->
+  <table>
+    <thead>
+      <tr><th>Date</th><th>Title</th><th>Description</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>15 Aug 2025</td><td>Independence Day</td><td>Flag hoisting at 8:30 AM</td></tr>
+      <tr><td>20 Aug 2025</td><td>Orientation</td><td>All new students report to auditorium</td></tr>
+      <tr><td>10 Sep 2025</td><td>Internal Exams</td><td>Time-table to be announced</td></tr>
+    </tbody>
+  </table>
+
+  <!-- Recent Notice Cards -->
+  <div class="notice-cards">
+    <div class="notice-card">
+      <div class="notice-date">15 Aug 2025</div>
+      <div class="notice-title">Independence Day</div>
+      <div class="notice-desc">Flag hoisting at 8:30 AM in the campus.</div>
+    </div>
+    <div class="notice-card">
+      <div class="notice-date">20 Aug 2025</div>
+      <div class="notice-title">Orientation Program</div>
+      <div class="notice-desc">All new students should attend in the auditorium.</div>
+    </div>
+    <div class="notice-card">
+      <div class="notice-date">10 Sep 2025</div>
+      <div class="notice-title">Internal Exams</div>
+      <div class="notice-desc">Detailed time-table will be shared soon.</div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
+</footer>
+
 </body>
 </html>
-
-```
