@@ -101,29 +101,33 @@
       margin: auto;
     }
 
-    .management-card {
-      background: #fff;
-      border-radius: 15px;
-      padding: 25px 20px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      text-align: center;
-    }
+    /* Management Card */
+.management-card {
+  background: #fff;
+  border-radius: 8px; /* smaller radius for slightly rounded edges or set 0 for perfect square */
+  padding: 25px 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+/* Remove roundness on image */
+.management-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 0; /* square image */
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 4px solid #007bff;
+}
+
 
     .management-card:hover {
       transform: translateY(-8px);
       box-shadow: 0 10px 20px rgba(0,0,0,0.15);
     }
 
-    .management-card img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #007bff;
-    }
-
+  
     .management-card h3 {
       margin: 8px 0 5px;
       font-size: 1.3rem;
@@ -198,4 +202,5 @@
 
 </body>
 </html>
+
 
