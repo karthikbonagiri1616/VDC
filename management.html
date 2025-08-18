@@ -5,65 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Management | Vaagdevi Junior & Degree College, Boath</title>
   <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      font-family: Arial, sans-serif;
       background: #f4f7fb;
       color: #333;
     }
 
-    /* Keep your header as is */
+    /* Header + Banner */
     header img.banner {
       width: 100%;
       height: auto;
       display: block;
     }
 
+    /* Navbar */
     .navbar {
       background: #004aad;
-      padding: 12px 0;
+      position: relative;
     }
 
     .navbar ul {
       list-style: none;
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
+      flex-wrap: wrap;
+      padding: 10px 0;
       margin: 0;
-      padding: 0;
     }
 
-    .navbar ul li {
-      margin: 5px 12px;
-    }
-
-    .navbar ul li a {
+    .navbar li { margin: 5px 12px; }
+    .navbar a {
       text-decoration: none;
-      color: #fff;
+      color: white;
       font-weight: 500;
       padding: 6px 12px;
       border-radius: 6px;
       transition: background 0.3s;
     }
 
-    .navbar ul li a:hover,
-    .navbar ul li a.active {
-      background: #007bff;
+    .navbar a:hover,
+    .navbar a.active { background: #007bff; }
+
+    /* Toggle Button */
+    .menu-toggle {
+      display: none;
+      font-size: 28px;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar ul { display: none; flex-direction: column; width: 100%; text-align: center; }
+      .navbar ul.show { display: flex; }
+      .menu-toggle { display: block; }
     }
 
     /* Management Section */
     .management-section {
-      padding: 80px 40px;
+      padding: 50px 20px;
       text-align: center;
     }
 
     .management-heading h2 {
       font-size: 2.3rem;
-      font-weight: 900;
-      color: #2c3e50;
+      font-weight: 700;
       display: inline-block;
-      padding: 18px 29px;
-      background: linear-gradient(90deg, #007bff, #00c6ff);
+      padding: 10px 25px;
+      background: linear-gradient(90deg,#007bff,#00c6ff);
       color: #fff;
       border-radius: 10px;
       margin-bottom: 10px;
@@ -72,26 +87,27 @@
     .heading-underline {
       display: block;
       width: 140px;
-      height: 6px;
-      margin: 15px auto 35px;
-      background: linear-gradient(90deg, #007bff, #00c6ff);
+      height: 4px;
+      margin: 12px auto 30px;
+      background: linear-gradient(90deg,#007bff,#00c6ff);
       border-radius: 2px;
     }
 
     .management-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
       margin: auto;
     }
 
     .management-card {
       background: #fff;
       border-radius: 15px;
-      padding: 30px 25px;
+      padding: 25px 20px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.08);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: center;
     }
 
     .management-card:hover {
@@ -100,8 +116,8 @@
     }
 
     .management-card img {
-      width: 150px;
-      height: 200px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       margin-bottom: 15px;
@@ -115,16 +131,15 @@
     }
 
     .management-card p {
-      margin: 0;
+      margin: 5px 0;
       font-size: 0.95rem;
       color: #555;
     }
 
-    @media (max-width: 768px) {
-      .management-heading h2 {
-        font-size: 1.8rem;
-        padding: 8px 15px;
-      }
+    .management-card .message {
+      font-style: italic;
+      margin-top: 10px;
+      color: #007bff;
     }
   </style>
 </head>
@@ -134,7 +149,8 @@
 <header>
   <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
   <nav class="navbar">
-    <ul>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="management.html" class="active">Management</a></li>
@@ -152,33 +168,46 @@
 <!-- Management Section -->
 <section class="management-section">
   <div class="management-heading">
-    <h2>Sri Raghavendra Educational Society<br>Our Management</h2>
+    <h2>Our Management Structure</h2>
     <span class="heading-underline"></span>
   </div>
 
   <div class="management-grid">
     <div class="management-card">
-      <img src="assets/img/SRIKANTH.jpeg" alt="Chairman">
-      <h3>Kathuri Srikanth</h3>
+      <img src="assets/img/chairman.jpg" alt="Chairman">
+      <h3>Mr. Rajesh Kumar</h3>
       <p><strong>Chairman</strong></p>
-      <p>Providing visionary leadership and strategic direction for the institution.</p>
+      <p class="message">"We believe in nurturing excellence and innovation in every student."</p>
     </div>
 
     <div class="management-card">
-      <img src="assets/img/RAJASHEKHAR.jpeg" alt="Correspondent">
-      <h3>Elkuchi Rajashekhar</h3>
-      <p><strong>Correspondent</strong></p>
-      <p>Ensures academic excellence and holistic development of students.</p>
+      <img src="assets/img/principal.jpg" alt="Principal">
+      <h3>Dr. Suresh Reddy</h3>
+      <p><strong>Principal</strong></p>
+      <p class="message">"Academic success combined with personal growth is our core mission."</p>
     </div>
 
-  
+    <div class="management-card">
+      <img src="assets/img/director.jpg" alt="Director">
+      <h3>Mrs. Kavitha Sharma</h3>
+      <p><strong>Academic Director</strong></p>
+      <p class="message">"Innovating curriculum for a brighter future of our students."</p>
+    </div>
+
+    <div class="management-card">
+      <img src="assets/img/coordinator.jpg" alt="Coordinator">
+      <h3>Mr. Ajay Patil</h3>
+      <p><strong>Program Coordinator</strong></p>
+      <p class="message">"Ensuring smooth and effective academic activities every day."</p>
+    </div>
   </div>
 </section>
 
+<script>
+  function toggleMenu() {
+    document.getElementById("menu").classList.toggle("show");
+  }
+</script>
+
 </body>
 </html>
-
-
-
-
-
