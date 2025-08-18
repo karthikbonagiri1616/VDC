@@ -1,5 +1,5 @@
 body {margin:0; font-family: Arial, sans-serif; background:#f4f4f4; color:#333;}
-header .banner {width:100%; max-height:200px; object-fit:cover;}
+header .banner {width:100%; max-height:250px; object-fit:cover;}
 .navbar ul {display:flex; flex-wrap:wrap; justify-content:center; list-style:none; background:#0055a5; margin:0; padding:10px 0;}
 .navbar ul li {margin:0 10px;}
 .navbar ul li a {color:white; font-weight:bold; padding:8px 15px; transition:0.3s;}
@@ -139,3 +139,4 @@ function closeLightbox() {
 
 </body>
 </html>
+
