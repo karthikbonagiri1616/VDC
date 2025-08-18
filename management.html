@@ -6,59 +6,81 @@
   <title>Management - Vaagdevi Junior & Degree College, Boath</title>
   <link rel="stylesheet" href="css/style.css">
   <style>
-    /* Management Team Cards */
-    .management-container {
-      max-width: 1200px;
-      margin: 50px auto;
-      padding: 20 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
+   /* Management Section */
+.management-container {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
 
-    .card {
-      background: #FFFFFF;
-      padding: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: 0.3s;
-    }
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  border-radius: 6px;
+}
 
-    .card:hover {
-      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-    }
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
 
-    .card img {
-      width: 100%;
-      height: auto;
-      object-fit: cover;
-    }
+.card img {
+  width: 100%;
+  height: auto;              /* Flexible height */
+  max-height: 250px;         /* Safe max height */
+  object-fit: cover;
+  border-radius: 4px;
+}
 
-    .card h3 {
-      margin-top: 15px;
-      font-size: 1.2rem;
-      color: #004080;
-    }
+.card h3 {
+  margin-top: 15px;
+  font-size: 1.3rem;
+  color: #004080;
+  text-align: center;
+  word-wrap: break-word;     /* Prevent cutting long names */
+}
 
-    .card p {
-      margin-top: 10px;
-      font-size: 0.95rem;
-      color: #555;
-    }
+.card p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  line-height: 1.4;
+}
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-      .card img {
-        height: 400px;
-      }
-    }
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  .card img {
+    max-height: 200px;
+  }
+  .card h3 {
+    font-size: 1.1rem;
+  }
+  .card p {
+    font-size: 0.95rem;
+  }
+}
 
-    @media (max-width: 480px) {
-      .card img {
-        height: 300px;
-      }
-    }
-  </style>
+@media (max-width: 480px) {
+  .card img {
+    max-height: 180px;
+  }
+  .card h3 {
+    font-size: 1rem;
+  }
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+</style>
+
 </head>
 <body>
 
@@ -216,6 +238,7 @@ toggle.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
