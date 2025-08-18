@@ -9,64 +9,80 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background: #f8f9fc;
+      font-family: "Poppins", Arial, sans-serif;
+      background: #f4f6fb;
       color: #333;
-      line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('assets/images/faculty-banner.jpg') center/cover no-repeat;
-      padding: 5rem 1rem;
-      text-align: center;
+      background: linear-gradient(135deg, #4f46e5, #9333ea, #f97316);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
       color: #fff;
+      text-align: center;
+      padding: 5rem 2rem;
+      border-radius: 0 0 40px 40px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.2);
     }
     header h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       margin-bottom: .5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
     }
-    header p { font-size: 1.2rem; }
+    header p { font-size: 1.2rem; opacity: 0.9; }
 
-    /* Grid layout */
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Grid */
     .faculty-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 2rem;
       padding: 3rem 2rem;
       max-width: 1200px;
       margin: auto;
     }
 
+    /* Cards */
     .faculty-card {
       position: relative;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      border-radius: 20px;
       overflow: hidden;
-      cursor: pointer;
-      transition: transform .3s ease, box-shadow .3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform .4s ease, box-shadow .4s ease;
+      background: #fff;
     }
     .faculty-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.18);
     }
     .faculty-card img {
       width: 100%;
       height: 280px;
       object-fit: cover;
+      transition: transform .4s ease;
     }
+    .faculty-card:hover img { transform: scale(1.08); }
+
     .faculty-info {
-      padding: 1.2rem;
-      text-align: center;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, #e0e7ff, #ede9fe, #fff7ed);
     }
     .faculty-info h2 {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       margin-bottom: .4rem;
-      color: #222;
+      color: #1e1e2f;
+      font-weight: 600;
     }
     .faculty-info p {
-      font-size: .95rem;
-      color: #666;
+      font-size: 1rem;
+      color: #555;
     }
 
     /* Modal */
@@ -74,7 +90,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.6);
+      background: rgba(0,0,0,0.7);
       z-index: 1000;
       justify-content: center;
       align-items: center;
@@ -82,36 +98,43 @@
     }
     .modal-content {
       background: #fff;
-      border-radius: 20px;
-      max-width: 700px;
+      border-radius: 25px;
+      max-width: 750px;
       width: 100%;
-      padding: 2rem;
-      position: relative;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
       animation: fadeIn .3s ease;
+      position: relative;
     }
     .modal-content img {
-      width: 150px;
-      height: 150px;
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       object-fit: cover;
-      margin-bottom: 1rem;
+      margin-bottom: 1.2rem;
+      border: 5px solid #4f46e5;
     }
     .modal-content h2 {
-      margin-bottom: .5rem;
+      margin-bottom: .8rem;
+      font-size: 1.8rem;
       color: #222;
     }
     .modal-content p {
-      margin-bottom: .8rem;
+      margin-bottom: 1rem;
       font-size: 1rem;
+      color: #444;
     }
     .close {
       position: absolute;
       top: 15px;
       right: 20px;
-      font-size: 1.5rem;
+      font-size: 1.8rem;
       cursor: pointer;
-      color: #555;
+      color: #666;
+      transition: .3s;
     }
+    .close:hover { color: #000; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px); }
@@ -122,8 +145,8 @@
 <body>
 
 <header>
-  <h1>Our Faculty</h1>
-  <p>Meet the dedicated educators guiding your academic journey</p>
+  <h1>Meet Our Faculty</h1>
+  <p>The passionate educators who shape your future</p>
 </header>
 
 <section class="faculty-grid">
@@ -198,7 +221,6 @@
   function closeModal(id) {
     document.getElementById(id).style.display = "none";
   }
-  // Close modal when clicking outside
   window.onclick = function(e) {
     document.querySelectorAll('.modal').forEach(modal => {
       if (e.target === modal) modal.style.display = "none";
