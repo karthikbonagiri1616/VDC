@@ -3,8 +3,130 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vaagdevi Junior & Degree College, Boath</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Management | Vaagdevi Junior & Degree College, Boath</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f7fb;
+      color: #333;
+    }
+
+    /* Keep your header as is */
+    header img.banner {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .navbar {
+      background: #004aad;
+      padding: 12px 0;
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar ul li {
+      margin: 5px 12px;
+    }
+
+    .navbar ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      background: #007bff;
+    }
+
+    /* Management Section */
+    .management-section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .management-heading h2 {
+      font-size: 2.3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      display: inline-block;
+      padding: 10px 25px;
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      color: #fff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
+    .heading-underline {
+      display: block;
+      width: 140px;
+      height: 4px;
+      margin: 12px auto 30px;
+      background: linear-gradient(90deg, #007bff, #00c6ff);
+      border-radius: 2px;
+    }
+
+    .management-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .management-card {
+      background: #fff;
+      border-radius: 15px;
+      padding: 25px 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .management-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+
+    .management-card img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      border: 4px solid #007bff;
+    }
+
+    .management-card h3 {
+      margin: 8px 0 5px;
+      font-size: 1.3rem;
+      color: #2c3e50;
+    }
+
+    .management-card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    @media (max-width: 768px) {
+      .management-heading h2 {
+        font-size: 1.8rem;
+        padding: 8px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -13,9 +135,9 @@
   <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
   <nav class="navbar">
     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="management.html">Management</a></li>
+      <li><a href="management.html" class="active">Management</a></li>
       <li><a href="faculty.html">Faculty</a></li>
       <li><a href="Courses.html">Courses</a></li>
       <li><a href="Notice board.html">Notice Board</a></li>
@@ -27,25 +149,43 @@
   </nav>
 </header>
 
-
-
-  <div class="container">
-    <h2>Our Management</h2>
-    <p>The Management team leads with vision and commitment to academic excellence and student success.</p>
-
-    <h3>Chairman</h3>
-    <p>Message from the Chairman about institutional goals and values.</p>
-
-    <h3>Principal</h3>
-    <p>Academic leadership, quality assurance, and student welfare initiatives.</p>
-
-    <h3>Director</h3>
-    <p>Operations, development, and community outreach programs.</p>
+<!-- Management Section -->
+<section class="management-section">
+  <div class="management-heading">
+    <h2>Our Management Structure</h2>
+    <span class="heading-underline"></span>
   </div>
 
-  <footer>
-    <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
-  </footer>
-</body>
+  <div class="management-grid">
+    <div class="management-card">
+      <img src="assets/img/chairman.jpg" alt="Chairman">
+      <h3>Mr. Rajesh Kumar</h3>
+      <p><strong>Chairman</strong></p>
+      <p>Providing visionary leadership and strategic direction for the institution.</p>
+    </div>
 
+    <div class="management-card">
+      <img src="assets/img/principal.jpg" alt="Principal">
+      <h3>Dr. Suresh Reddy</h3>
+      <p><strong>Principal</strong></p>
+      <p>Ensures academic excellence and holistic development of students.</p>
+    </div>
+
+    <div class="management-card">
+      <img src="assets/img/director.jpg" alt="Director">
+      <h3>Mrs. Kavitha Sharma</h3>
+      <p><strong>Academic Director</strong></p>
+      <p>Guides curriculum design and innovative teaching methodologies.</p>
+    </div>
+
+    <div class="management-card">
+      <img src="assets/img/coordinator.jpg" alt="Coordinator">
+      <h3>Mr. Ajay Patil</h3>
+      <p><strong>Program Coordinator</strong></p>
+      <p>Coordinates daily academic activities and student support services.</p>
+    </div>
+  </div>
+</section>
+
+</body>
 </html>
