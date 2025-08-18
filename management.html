@@ -63,9 +63,11 @@
 <body>
 
 <!-- Header with Banner (same as index.html) -->
+<!-- Header with Banner -->
 <header>
   <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
   <nav class="navbar">
+    <a href="#" class="menu-toggle"><i class="fas fa-bars"></i></a>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
@@ -80,6 +82,69 @@
     </ul>
   </nav>
 </header>
+
+<style>
+/* Navbar styling for toggle */
+.navbar {
+  position: relative;
+}
+
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  color: #004080;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .navbar ul {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #004080;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    padding: 10px 0;
+  }
+
+  .navbar ul li a {
+    color: #fff;
+    padding: 10px 20px;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+}
+</style>
+
+<!-- Include Font Awesome for hamburger icon -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<script>
+// Toggle mobile menu
+const toggle = document.querySelector('.menu-toggle');
+const navUl = document.querySelector('.navbar ul');
+
+toggle.addEventListener('click', () => {
+  navUl.classList.toggle('active');
+});
+</script>
+
 
 <!-- Management Team Section -->
 <section class="management-container">
@@ -107,4 +172,5 @@
 
 </body>
 </html>
+
 
