@@ -3,221 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faculty | Vaagdevi Junior & Degree College, Boath</title>
+  <title>Faculty | Vaagdevi Junior & Degree College</title>
   <style>
+    /* Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
     body {
-      margin: 0;
       font-family: "Segoe UI", Arial, sans-serif;
-      background: #f7f9fc;
+      background: #f8f9fc;
       color: #333;
+      line-height: 1.6;
     }
 
     header {
-      background: #003366;
-      padding: 15px;
+      background: linear-gradient(rgba(0,0,0,.6), rgba(0,0,0,.6)), url('assets/images/faculty-banner.jpg') center/cover no-repeat;
+      padding: 5rem 1rem;
       text-align: center;
       color: #fff;
     }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: .5rem;
+    }
+    header p { font-size: 1.2rem; }
 
-    nav {
-      background: #002244;
-      padding: 10px;
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      flex-wrap: wrap;
-    }
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      padding: 6px 12px;
-      border-radius: 6px;
-      transition: 0.3s;
-    }
-    nav ul li a:hover,
-    nav ul li a.active {
-      background: #ffcc00;
-      color: #003366;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
-    }
-    .title {
-      text-align: center;
-      margin-bottom: 10px;
-      font-size: 32px;
-      color: #003366;
-    }
-    .subtitle {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 16px;
-      color: #666;
-    }
-
-    /* Search + Filter */
-    .controls {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 25px;
-    }
-    .controls input {
-      padding: 10px;
-      width: 250px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-    }
-    .controls select {
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      min-width: 150px;
-    }
-
-    /* Faculty Cards */
+    /* Grid layout */
     .faculty-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      gap: 2rem;
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: auto;
     }
+
     .faculty-card {
-      background: white;
-      border-radius: 12px;
+      position: relative;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-      transition: 0.3s ease;
+      cursor: pointer;
+      transition: transform .3s ease, box-shadow .3s ease;
     }
     .faculty-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.15);
     }
-    .faculty-img {
+    .faculty-card img {
       width: 100%;
-      height: 350px;
+      height: 280px;
       object-fit: cover;
     }
     .faculty-info {
-      padding: 15px;
+      padding: 1.2rem;
       text-align: center;
     }
-    .faculty-info h3 {
-      margin: 8px 0;
-      font-size: 18px;
-      color: #003366;
+    .faculty-info h2 {
+      font-size: 1.3rem;
+      margin-bottom: .4rem;
+      color: #222;
     }
     .faculty-info p {
-      margin: 4px 0;
-      font-size: 14px;
+      font-size: .95rem;
+      color: #666;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 1000;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .modal-content {
+      background: #fff;
+      border-radius: 20px;
+      max-width: 700px;
+      width: 100%;
+      padding: 2rem;
+      position: relative;
+      animation: fadeIn .3s ease;
+    }
+    .modal-content img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    .modal-content h2 {
+      margin-bottom: .5rem;
+      color: #222;
+    }
+    .modal-content p {
+      margin-bottom: .8rem;
+      font-size: 1rem;
+    }
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
       color: #555;
     }
 
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Vaagdevi Junior & Degree College, Boath</h1>
+  <h1>Our Faculty</h1>
+  <p>Meet the dedicated educators guiding your academic journey</p>
 </header>
 
-<nav>
-  <ul>
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="faculty.html" class="active">Faculty</a></li>
-    <li><a href="courses.html">Courses</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="container">
-  <h2 class="title">Our Faculty</h2>
-  <p class="subtitle">Search, filter, and explore our experienced faculty members</p>
-
-  <div class="controls">
-    <input type="text" id="searchBox" placeholder="Search by name...">
-    <select id="departmentFilter">
-      <option value="all">All Departments</option>
-      <option value="Mathematics">Mathematics</option>
-      <option value="Physics">Physics</option>
-      <option value="Commerce">Commerce</option>
-      <option value="Computer Science">Computer Science</option>
-    </select>
+<section class="faculty-grid">
+  <!-- Faculty 1 -->
+  <div class="faculty-card" onclick="openModal('prof1')">
+    <img src="assets/images/faculty1.jpg" alt="Prof. Ramesh">
+    <div class="faculty-info">
+      <h2>Dr. Ramesh Kumar</h2>
+      <p>Principal & Professor of Physics</p>
+    </div>
   </div>
 
-  <div class="faculty-grid" id="facultyGrid"></div>
+  <!-- Faculty 2 -->
+  <div class="faculty-card" onclick="openModal('prof2')">
+    <img src="assets/images/faculty2.jpg" alt="Prof. Anjali">
+    <div class="faculty-info">
+      <h2>Prof. Anjali Sharma</h2>
+      <p>Head of English Department</p>
+    </div>
+  </div>
+
+  <!-- Faculty 3 -->
+  <div class="faculty-card" onclick="openModal('prof3')">
+    <img src="assets/images/faculty3.jpg" alt="Prof. Vivek">
+    <div class="faculty-info">
+      <h2>Dr. Vivek Rao</h2>
+      <p>Assistant Professor of Chemistry</p>
+    </div>
+  </div>
+</section>
+
+<!-- Modal 1 -->
+<div id="prof1" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('prof1')">&times;</span>
+    <img src="assets/images/faculty1.jpg" alt="Prof. Ramesh">
+    <h2>Dr. Ramesh Kumar</h2>
+    <p><strong>Position:</strong> Principal & Professor of Physics</p>
+    <p><strong>Research Interests:</strong> Quantum Mechanics, Nano Materials</p>
+    <p><strong>About:</strong> With 20+ years of experience, Dr. Kumar has guided numerous research scholars and published in reputed journals worldwide.</p>
+  </div>
 </div>
 
-<footer>
-  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
-</footer>
+<!-- Modal 2 -->
+<div id="prof2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('prof2')">&times;</span>
+    <img src="assets/images/faculty2.jpg" alt="Prof. Anjali">
+    <h2>Prof. Anjali Sharma</h2>
+    <p><strong>Position:</strong> Head of English Department</p>
+    <p><strong>Research Interests:</strong> Modern Literature, Communication Studies</p>
+    <p><strong>About:</strong> Prof. Sharma has been inspiring students with innovative teaching methods and fostering a love for literature and communication.</p>
+  </div>
+</div>
+
+<!-- Modal 3 -->
+<div id="prof3" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('prof3')">&times;</span>
+    <img src="assets/images/faculty3.jpg" alt="Prof. Vivek">
+    <h2>Dr. Vivek Rao</h2>
+    <p><strong>Position:</strong> Assistant Professor of Chemistry</p>
+    <p><strong>Research Interests:</strong> Organic Chemistry, Green Chemistry</p>
+    <p><strong>About:</strong> Dr. Rao has a decade of teaching experience and focuses on eco-friendly chemical processes to promote sustainable development.</p>
+  </div>
+</div>
 
 <script>
-  // Static faculty data
-  const facultyData = [
-    { name: "Rajanala Srinivas", department: "Mathematics", qualification: "M.Sc, B.Ed", image: "assets/img/SRINU (2).jpg" },
-    { name: "Dr. Lakshmi Reddy", department: "Physics", qualification: "M.Sc, Ph.D", image: "assets/img/faculty/f2.jpg" },
-    { name: "Kiran Kumar", department: "Commerce", qualification: "M.Com", image: "assets/img/faculty/f3.jpg" },
-    { name: "Priya Sharma", department: "Computer Science", qualification: "MCA", image: "assets/img/faculty/f4.jpg" },
-    { name: "Arjun Rao", department: "Mathematics", qualification: "M.Sc", image: "assets/img/faculty/f5.jpg" },
-    { name: "Sanjana Devi", department: "Physics", qualification: "M.Sc", image: "assets/img/faculty/f6.jpg" }
-  ];
-
-  const facultyGrid = document.getElementById("facultyGrid");
-  const searchBox = document.getElementById("searchBox");
-  const departmentFilter = document.getElementById("departmentFilter");
-
-  function renderFaculty() {
-    const searchText = searchBox.value.toLowerCase();
-    const filterDept = departmentFilter.value;
-
-    facultyGrid.innerHTML = "";
-
-    const filteredFaculty = facultyData.filter(f => 
-      (filterDept === "all" || f.department === filterDept) &&
-      f.name.toLowerCase().includes(searchText)
-    );
-
-    if (filteredFaculty.length === 0) {
-      facultyGrid.innerHTML = '<p style="text-align: center; color: #666;">No faculty members found matching your criteria.</p>';
-      return;
-    }
-
-    filteredFaculty.forEach(f => {
-      const card = document.createElement("div");
-      card.classList.add("faculty-card");
-      card.innerHTML = `
-        <img src="${f.image}" class="faculty-img" alt="${f.name}">
-        <div class="faculty-info">
-          <h3>${f.name}</h3>
-          <p><strong>Department:</strong> ${f.department || 'N/A'}</p>
-          <p><strong>Qualification:</strong> ${f.qualification || 'N/A'}</p>
-        </div>
-      `;
-      facultyGrid.appendChild(card);
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  // Close modal when clicking outside
+  window.onclick = function(e) {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (e.target === modal) modal.style.display = "none";
     });
   }
-
-  searchBox.addEventListener("input", renderFaculty);
-  departmentFilter.addEventListener("change", renderFaculty);
-
-  renderFaculty();
 </script>
 
 </body>
