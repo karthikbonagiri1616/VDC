@@ -1,50 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery – Vaagdevi Junior & Degree College</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 10px; }
-    .gallery img { width: 100%; height: 140px; object-fit: cover; border-radius: 8px; border: 1px solid #e6e6e6; }
+    :root {
+      --primary:#0a2a66;
+      --accent:#f9b800;
+      --light:#f8f9fc;
+      --dark:#222;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:var(--dark);}
+    img{max-width:100%;display:block;}
+    h1,h2{margin-bottom:15px;font-weight:700;}
+    .container{max-width:1200px;margin:auto;padding:40px 20px;}
+
+    /* Header */
+    header img.banner{width:100%;height:250px;object-fit:cover;display:block;}
+    .navbar{background:var(--primary);}
+    .navbar ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;}
+    .navbar li{margin:0;}
+    .navbar a{display:block;padding:12px 18px;color:#fff;text-decoration:none;transition:.3s;}
+    .navbar a:hover,.navbar .active{background:var(--accent);color:#000;}
+
+    /* Gallery */
+    #gallery h2{text-align:center;color:var(--primary);margin-bottom:30px;}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}
+    .grid img{width:100%;height:220px;object-fit:cover;border-radius:8px;cursor:pointer;transition:.3s;}
+    .grid img:hover{transform:scale(1.05);box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+
+    /* Lightbox */
+    .lightbox{display:none;position:fixed;z-index:1000;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
+    .lightbox img{max-width:90%;max-height:80%;border:5px solid #fff;border-radius:8px;}
+    .lightbox:target{display:flex;}
+    .close{position:absolute;top:20px;right:40px;font-size:32px;color:#fff;text-decoration:none;font-weight:bold;}
+    
+    /* Footer */
+    footer{background:var(--primary);color:#fff;text-align:center;padding:25px 15px;margin-top:40px;}
+    footer p{margin:5px 0;}
+    footer a{color:var(--accent);text-decoration:none;margin:0 8px;}
+    footer a:hover{text-decoration:underline;}
   </style>
 </head>
 <body>
-  <header>
-    <img src="assets/img/Newlogo.jpg" alt="College Banner" />
-    <h1>Vaagdevi Junior & Degree College, Boath</h1>
-  </header>
-  <nav>
-     <ul>
-      <li><a href="index.html" class="active">Home</a></li>
+
+<!-- Header -->
+<header>
+  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="management.html">Management</a></li>
       <li><a href="faculty.html">Faculty</a></li>
       <li><a href="Courses.html">Courses</a></li>
       <li><a href="Notice board.html">Notice Board</a></li>
       <li><a href="nss.html">NSS</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
       <li><a href="Admission.html">Admission</a></li>
       <li><a href="Contact.html">Contact</a></li>
     </ul>
   </nav>
+</header>
 
-  <div class="container">
-    <h2>Gallery</h2>
-    <div class="gallery">
-      <img src="assets/img/sample1.jpg" alt="Event 1" />
-      <img src="assets/img/sample2.jpg" alt="Event 2" />
-      <img src="assets/img/sample3.jpg" alt="Event 3" />
-      <img src="assets/img/sample4.jpg" alt="Event 4" />
-      <img src="assets/img/sample5.jpg" alt="Event 5" />
-      <img src="assets/img/sample6.jpg" alt="Event 6" />
-    </div>
+<!-- Gallery -->
+<section id="gallery" class="container">
+  <h2>Our College Gallery</h2>
+  <div class="grid">
+    <a href="#img1"><img src="assets/img/gallery1.jpg" alt="Event 1"></a>
+    <a href="#img2"><img src="assets/img/gallery2.jpg" alt="Event 2"></a>
+    <a href="#img3"><img src="assets/img/gallery3.jpg" alt="Event 3"></a>
+    <a href="#img4"><img src="assets/img/gallery4.jpg" alt="Event 4"></a>
+    <a href="#img5"><img src="assets/img/gallery5.jpg" alt="Event 5"></a>
+    <a href="#img6"><img src="assets/img/gallery6.jpg" alt="Event 6"></a>
   </div>
+</section>
 
-  <footer>
-    <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath</p>
-  </footer>
+<!-- Lightbox Images -->
+<div id="img1" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="assets/img/gallery1.jpg" alt="">
+</div>
+<div id="img2" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="assets/img/gallery2.jpg" alt="">
+</div>
+<div id="img3" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="assets/img/gallery3.jpg" alt="">
+</div>
+<div id="img4" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="assets/img/gallery4.jpg" alt="">
+</div>
+<div id="img5" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="assets/img/gallery5.jpg" alt="">
+</div>
+<div id="img6" class="lightbox">
+  <a href="#" class="close">&times;</a>
+  <img src="assets/img/gallery6.jpg" alt="">
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath. All Rights Reserved.<br>
+  <small>Website Designed by Karthik Bonagiri - 9014443040</small></p> 
+  <p>
+    <a href="index.html">Home</a> | 
+    <a href="about.html">About</a> | 
+    <a href="Courses.html">Courses</a> | 
+    <a href="Contact.html">Contact</a>
+  </p>
+</footer>
+
 </body>
-
 </html>
