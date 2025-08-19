@@ -378,63 +378,44 @@ function scrollGallery(direction) {
 </script>
 
 
-<!-- Latest News / Notice Board -->
-<section class="notice">
-  <div class="container">
-    <h2>Latest News & Notices</h2>
-    <div class="news-ticker">
-      <ul>
-        <li>📢 Admissions open for 2025-26 Batch (Junior, Degree, Defence).</li>
-        <li>🏆 Our students secured top ranks in Defence entrance exams.</li>
-        <li>📚 Guest Lecture on Career Opportunities – Aug 25, 2025.</li>
-        <li>🌱 NSS Tree Plantation Drive – Sept 5, 2025.</li>
-        <li>🎉 Annual Day Celebrations – Oct 15, 2025.</li>
-      </ul>
-    </div>
+<!-- LATEST NEWS / NOTICE BOARD -->
+<section id="news" class="container">
+  <h2>Latest News & Notices</h2>
+  <div class="news-ticker">
+    <ul>
+      <li><span class="tag important">Notice</span> Admissions open for 2025 – Apply Now!</li>
+      <li><span class="tag event">Event</span> NSS Camp scheduled on 5th Sept at Boath Village.</li>
+      <li><span class="tag update">Update</span> New computer lab inaugurated for degree students.</li>
+      <li><span class="tag alert">Alert</span> Mid-term exams begin from 10th September.</li>
+      <li><span class="tag achievement">Success</span> 15 students selected for Indian Army this year.</li>
+    </ul>
   </div>
 </section>
 
 <style>
-/* Notice Section */
-.notice {
-  background: linear-gradient(135deg, #fdfbfb, #ebedee);
-  padding: 50px 20px;
-  text-align: center;
-}
-.notice h2 {
-  color: var(--primary);
-  margin-bottom: 20px;
-  font-size: 1.8rem;
-}
+  /* Section */
+  #news{text-align:center;margin:60px auto;}
+  #news h2{font-size:2rem;margin-bottom:20px;color:#0a2a66;}
 
-/* News Ticker */
-.news-ticker {
-  height: 50px;  /* visible height */
-  overflow: hidden;
-  position: relative;
-}
-.news-ticker ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  animation: ticker 15s linear infinite;
-}
-.news-ticker li {
-  height: 50px;
-  line-height: 50px;
-  font-size: 1rem;
-  color: #222;
-}
+  /* News Ticker */
+  .news-ticker{background:#f1f5ff;border:2px solid #0a2a66;padding:12px;overflow:hidden;position:relative;border-radius:8px;}
+  .news-ticker ul{list-style:none;display:flex;gap:50px;margin:0;padding:0;animation:scroll-left 20s linear infinite;}
+  .news-ticker li{white-space:nowrap;font-size:1.1rem;font-weight:500;color:#222;}
+  .news-ticker:hover ul{animation-play-state:paused;}
 
-/* Animation */
-@keyframes ticker {
-  0% { transform: translateY(0); }
-  20% { transform: translateY(-50px); }
-  40% { transform: translateY(-100px); }
-  60% { transform: translateY(-150px); }
-  80% { transform: translateY(-200px); }
-  100% { transform: translateY(0); }
-}
+  /* Tags */
+  .tag{padding:2px 8px;border-radius:5px;font-size:0.85rem;margin-right:8px;color:#fff;font-weight:bold;}
+  .tag.important{background:#d9534f;}
+  .tag.event{background:#5bc0de;}
+  .tag.update{background:#5cb85c;}
+  .tag.alert{background:#f0ad4e;}
+  .tag.achievement{background:#337ab7;}
+
+  /* Animation */
+  @keyframes scroll-left {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
 </style>
 
 
@@ -531,6 +512,7 @@ function scrollGallery(direction) {
 
 </body>
 </html>
+
 
 
 
