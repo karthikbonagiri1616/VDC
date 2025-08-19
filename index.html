@@ -10,73 +10,40 @@
       --accent:#f9b800;
       --light:#f8f9fc;
       --dark:#222;
+      --secondary:#e63946;
     }
     *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:var(--dark);background:#fff;}
+    body{font-family:'Segoe UI',Arial,sans-serif;line-height:1.6;background:#fff;color:var(--dark);}
     img{max-width:100%;display:block;}
     a{text-decoration:none;}
 
- /* Header */
-    header img.banner {
-  width: 100%;
-  height: 250px;      /* keeps header slim */
-  object-fit: cover;  /* crops to fit nicely */
-  display: block;
-}
+    /* Header */
+    header{background:#fff;border-bottom:3px solid var(--primary);text-align:center;}
+    header img.banner{width:100%;max-height:180px;object-fit:cover;}
+    header h1{font-size:2rem;color:var(--primary);margin:10px 0;}
 
-.navbar {
-  background: #0a2a66;
-}
+    /* Navbar */
+    nav{background:var(--primary);}
+    nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;}
+    nav li{margin:0;}
+    nav a{display:block;padding:12px 18px;color:#fff;transition:.3s;font-weight:500;}
+    nav a:hover,nav .active{background:var(--accent);color:#000;}
 
-.navbar ul {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0;
-  padding: 0;
-}
-
-.navbar li {
-  margin: 0;
-}
-
-.navbar a {
-  display: block;
-  padding: 12px 18px;
-  color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.navbar a:hover,
-.navbar .active {
-  background: #f9b800;
-  color: #000;
-}
-    /* Hero Slider */
-    .hero{position:relative;overflow:hidden;height:420px;}
-    .slides{display:flex;width:300%;height:100%;animation:slide 15s infinite;}
-    .slides img{width:100%;object-fit:cover;}
-    @keyframes slide {
-      0% {transform:translateX(0);}
-      30% {transform:translateX(0);}
-      33% {transform:translateX(-100%);}
-      63% {transform:translateX(-100%);}
-      66% {transform:translateX(-200%);}
-      96% {transform:translateX(-200%);}
-      100% {transform:translateX(0);}
-    }
-    .hero-overlay{position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);}
-    .hero-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;color:#fff;z-index:1;}
-    .hero-content h2{font-size:2.3rem;margin-bottom:15px;}
-    .hero-content p{font-size:1.1rem;margin-bottom:20px;}
+    /* Hero Section */
+    .hero{position:relative;height:450px;background:url('assets/img/College.jpg') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;}
+    .hero::after{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.55);}
+    .hero-content{position:relative;z-index:1;}
+    .hero-content h2{font-size:2.5rem;margin-bottom:15px;animation:fadeInDown 2s;}
+    .hero-content p{font-size:1.2rem;margin-bottom:20px;animation:fadeInUp 2s;}
     .btn{background:var(--accent);color:#000;padding:10px 20px;border-radius:5px;font-weight:bold;transition:.3s;}
     .btn:hover{background:#fff;color:var(--primary);}
+    @keyframes fadeInDown{from{opacity:0;transform:translateY(-40px);}to{opacity:1;transform:translateY(0);}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(40px);}to{opacity:1;transform:translateY(0);}}
 
-    /* Sections */
-    .container{max-width:1100px;margin:auto;padding:50px 20px;}
-    section h2{text-align:center;margin-bottom:25px;color:var(--primary);}
+    /* Section Common */
+    .container{max-width:1100px;margin:auto;padding:60px 20px;}
+    section h2{text-align:center;margin-bottom:35px;color:var(--primary);font-size:2rem;position:relative;}
+    section h2::after{content:"";display:block;width:80px;height:4px;background:var(--accent);margin:10px auto 0;border-radius:2px;}
 
     /* About Preview */
     .about-preview{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
@@ -85,14 +52,27 @@
 
     /* Courses */
     .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-    .course-card{background:var(--light);padding:20px;border-radius:10px;text-align:center;border:1px solid #ddd;transition:.3s;}
-    .course-card:hover{transform:translateY(-5px);background:var(--primary);color:#fff;}
-    .course-card h3{margin-bottom:10px;}
+    .course-card{background:linear-gradient(135deg,#f9b800,#ffdd57);padding:25px;border-radius:12px;text-align:center;color:#000;transition:.3s;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
+    .course-card:hover{transform:scale(1.05);}
+    .course-card h3{margin-bottom:10px;font-size:1.2rem;}
 
     /* Gallery */
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;}
-    .gallery img{border-radius:10px;transition:.3s;cursor:pointer;}
-    .gallery img:hover{transform:scale(1.05);}
+    .gallery img{border-radius:10px;transition:.3s;cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,0.3);}
+    .gallery img:hover{transform:scale(1.07);}
+
+    /* Notice Board */
+    .news{background:var(--light);padding:40px 20px;border-radius:12px;box-shadow:0 3px 6px rgba(0,0,0,0.2);}
+    .news ul{list-style:none;}
+    .news li{padding:12px;margin:10px 0;border-left:5px solid var(--accent);background:#fff;transition:.3s;}
+    .news li:hover{transform:translateX(5px);background:#fafafa;}
+    .news li span{color:var(--secondary);font-weight:bold;margin-right:10px;}
+    .news a{color:var(--primary);font-weight:500;}
+
+    /* Call-to-action */
+    .cta{background:linear-gradient(135deg,#0a2a66,#1d4ed8);color:#fff;text-align:center;padding:50px 20px;}
+    .cta h2{margin-bottom:15px;font-size:2rem;}
+    .cta p{margin-bottom:20px;}
 
     /* Footer */
     footer{background:var(--primary);color:#fff;text-align:center;padding:25px 15px;margin-top:40px;}
@@ -102,9 +82,10 @@
 </head>
 <body>
 
-  <!-- Header (faculty-style) -->
+  <!-- Header -->
   <header>
-    <img src="assets/img/d.jpg" alt="College Banner" class="banner">
+    <img src="assets/img/Newlogo2.jpg" alt="College Banner" class="banner">
+    <h1>Vaagdevi Junior & Degree College, Boath</h1>
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -121,25 +102,26 @@
     </nav>
   </header>
 
-  <!-- Hero Slider -->
+  <!-- Hero -->
   <section class="hero">
-<h2>Welcome to Vaagdevi Junior & Degree College</h2>
-      <p>Excellence in Education & Defence Coaching since 2005</p>
-      <img src="assets/img/College.jpg" alt="College Banner 1">
-             
-    </section>
+    <div class="hero-content">
+      <h2>Welcome to Vaagdevi Junior & Degree College</h2>
+      <p>Where Education Meets Discipline & Defence Training</p>
+      <a href="about.html" class="btn">Explore More</a>
+    </div>
+  </section>
 
   <!-- About Preview -->
   <section class="container">
     <h2>About Us</h2>
     <div class="about-preview">
       <div>
-        <p>Vaagdevi Junior & Degree College, Boath, established in 2005, has been a pioneer in higher education and Defence coaching. With expert faculty and modern infrastructure, we are dedicated to shaping the future of our students.</p>
-        <p>Our mission is to empower students with knowledge, discipline, and values, preparing them for excellence in academics, Defence services, and life.</p>
+        <p>Founded in 2005, Vaagdevi Junior & Degree College has been a symbol of academic excellence and Defence coaching in Boath. With a strong focus on holistic education, we nurture both intellectual growth and discipline.</p>
+        <p>Our students excel in Engineering, Defence, Arts, Commerce, and various professional fields with confidence and dedication.</p>
         <a href="about.html" class="btn">Read More</a>
       </div>
       <div>
-        <img src="assets/img/College.jpg" alt="College Campus">
+        <img src="assets/img/campus1.jpg" alt="Campus">
       </div>
     </div>
   </section>
@@ -148,18 +130,9 @@
   <section class="container">
     <h2>Our Courses</h2>
     <div class="courses">
-      <div class="course-card">
-        <h3>Junior College (MPC, BiPC, CEC)</h3>
-        <p>Comprehensive programs with expert faculty and labs.</p>
-      </div>
-      <div class="course-card">
-        <h3>Degree College (B.A, B.Com, B.Sc)</h3>
-        <p>Strong academic foundation with practical exposure.</p>
-      </div>
-      <div class="course-card">
-        <h3>Defence Academy</h3>
-        <p>Specialized training for Army, Navy, Air Force & Police exams.</p>
-      </div>
+      <div class="course-card"><h3>Junior College</h3><p>MPC, BiPC, CEC with digital classrooms & labs.</p></div>
+      <div class="course-card"><h3>Degree College</h3><p>B.A, B.Com, B.Sc with experienced faculty.</p></div>
+      <div class="course-card"><h3>Defence Academy</h3><p>Army, Navy, Air Force, Police coaching & training.</p></div>
     </div>
     <div style="text-align:center;margin-top:20px;">
       <a href="Courses.html" class="btn">View All Courses</a>
@@ -170,13 +143,36 @@
   <section class="container">
     <h2>Campus Life</h2>
     <div class="gallery">
-      <img src="assets/img/campus1.jpg" alt="Campus Photo 1">
-      <img src="assets/img/campus2.jpg" alt="Campus Photo 2">
-      <img src="assets/img/campus3.jpg" alt="Campus Photo 3">
+      <img src="assets/img/campus2.jpg" alt="Gallery 1">
+      <img src="assets/img/campus3.jpg" alt="Gallery 2">
+      <img src="assets/img/campus4.jpg" alt="Gallery 3">
     </div>
     <div style="text-align:center;margin-top:20px;">
       <a href="gallery.html" class="btn">View Gallery</a>
     </div>
+  </section>
+
+  <!-- Notice Board (Latest Updates) -->
+  <section class="container">
+    <h2>Latest News & Updates</h2>
+    <div class="news">
+      <ul>
+        <li><span>📢</span><a href="Notice board.html">Admissions Open for 2025-26 Academic Year</a></li>
+        <li><span>📢</span><a href="Notice board.html">NSS Special Camp Scheduled from 10th Sep</a></li>
+        <li><span>📢</span><a href="Notice board.html">College Annual Day Celebrations – March 15</a></li>
+        <li><span>📢</span><a href="Notice board.html">New Defence Academy Batch Starting Soon</a></li>
+      </ul>
+    </div>
+    <div style="text-align:center;margin-top:20px;">
+      <a href="Notice board.html" class="btn">View All Notices</a>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="cta">
+    <h2>Join Vaagdevi Today</h2>
+    <p>Be a part of our journey of excellence in academics & Defence training.</p>
+    <a href="Admission.html" class="btn">Apply Now</a>
   </section>
 
   <!-- Footer -->
@@ -192,7 +188,3 @@
 
 </body>
 </html>
-
-
-
-
