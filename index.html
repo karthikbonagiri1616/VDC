@@ -183,28 +183,11 @@
     </nav>
   </header>
 
-  <!-- Notice Board Strip -->
+ <!-- Notice Board Strip -->
 <section id="news-strip">
   <div class="news-container">
-    <h2>Notice Board:</h2>
-    <div class="news-ticker">
-      <ul>
-        <li>Admissions open for 2025 – Apply Now!</li>
-        <li>NSS Camp scheduled on 5th Sept at Boath Village.</li>
-        <li>New computer lab inaugurated for degree students.</li>
-        <li>Mid-term exams begin from 10th September.</li>
-        <li>15 students selected for Indian Army this year.</li>
-      </ul>
-    </div>
-    <a href="Notice board.html" class="view-all">View All →</a>
-  </div>
-</section>
-
-<style>
-<!-- Notice Board Strip -->
-<section id="news-strip">
-  <div class="news-container">
-    <h2>Notice Board:</h2>
+    <h2 class="notice-title">Notice Board:</h2>
+    
     <div class="news-ticker">
       <ul>
         <li><span class="tag notice">Notice</span> Admissions open for 2025 – Apply Now!</li>
@@ -214,6 +197,7 @@
         <li><span class="tag success">Success</span> 15 students selected for Indian Army this year.</li>
       </ul>
     </div>
+
     <a href="Notice board.html" class="view-all">View All →</a>
   </div>
 </section>
@@ -231,23 +215,25 @@
 .news-container {
   display: flex;
   align-items: center;
-  gap: 20px;
+  justify-content: space-between; /* pushes left & right */
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
 }
 
-#news-strip h2 {
+.notice-title {
   color: var(--primary);
   font-size: 1.1rem;
   margin: 0;
   white-space: nowrap;
+  flex: 0 0 auto; /* fixed left */
 }
 
 .news-ticker {
-  flex: 1;
+  flex: 1; /* take remaining space */
   overflow: hidden;
   position: relative;
+  margin: 0 20px;
 }
 
 .news-ticker ul {
@@ -294,6 +280,7 @@
   text-decoration: none;
   white-space: nowrap;
   transition: 0.3s;
+  flex: 0 0 auto; /* fixed right */
 }
 .view-all:hover {
   background: var(--primary);
@@ -305,7 +292,6 @@
   100% { transform: translateX(-100%); }
 }
 </style>
-
 
   <!-- Hero -->
   <section class="hero"></section>
@@ -388,5 +374,6 @@
 
 </body>
 </html>
+
 
 
