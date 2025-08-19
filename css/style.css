@@ -91,9 +91,10 @@ footer {text-align:center; background:#003366; color:white; padding:15px; margin
 }
 
 /* General */
-body {font-family: Arial, sans-serif; line-height: 1.6; margin:0; padding:0; color:#333;}
-h2 {text-transform: uppercase; color:#003366; margin-bottom:20px; text-align:center;}
-.container {max-width: 1100px; margin: auto; padding: 20px;}
+body {font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; margin:0; padding:0; color:#333;}
+h1,h2,h3 {font-weight: 700; margin-bottom: 15px;}
+.container {max-width: 1100px; margin: auto; padding: 40px 20px;}
+h2 {text-transform: uppercase; color:#003366; text-align:center; margin-bottom:30px;}
 
 /* Banner */
 .banner {width: 100%; height: auto; display:block;}
@@ -102,18 +103,32 @@ h2 {text-transform: uppercase; color:#003366; margin-bottom:20px; text-align:cen
 .navbar {background: #003366;}
 .navbar ul {list-style: none; display: flex; flex-wrap: wrap; margin: 0; padding: 0; justify-content: center;}
 .navbar li {margin: 5px;}
-.navbar a {color: #fff; text-decoration: none; padding: 10px 15px; display: block;}
+.navbar a {color: #fff; text-decoration: none; padding: 10px 15px; display: block; transition: 0.3s;}
 .navbar a.active, .navbar a:hover {background: #ffcc00; color:#000;}
 
+/* Hero Sub */
+.hero-sub {background: url("assets/img/about-banner.jpg") center/cover no-repeat; color:#fff; text-align:center; padding:80px 20px; position: relative;}
+.hero-sub::after {content:""; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5);}
+.hero-text {position:relative; z-index:2;}
+.hero-sub h1 {font-size: 40px; margin-bottom: 10px;}
+.hero-sub p {font-size: 18px;}
+
 /* About Section */
-.about-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center;}
-.about-grid img {width:100%; border:2px solid #ccc;}
+.about-grid {display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;}
+.about-content p {margin-bottom: 15px;}
+.about-img img {width:100%; border: 3px solid #ddd;}
 @media(max-width:768px){.about-grid{grid-template-columns:1fr;}}
 
+/* History Timeline */
+.timeline {border-left:3px solid #003366; padding-left:30px; position:relative;}
+.timeline-item {margin-bottom:30px;}
+.timeline-item .year {font-weight:bold; color:#003366; display:block; margin-bottom:5px;}
+
 /* Services */
-.services-grid {display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap:20px; margin-top:30px;}
-.service-card {background:#f4f4f4; border:2px solid #ccc; padding:20px; text-align:center; font-weight:bold; transition:0.3s;}
-.service-card:hover {background:#003366; color:#fff; border-color:#003366;}
+.services-grid {display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:20px;}
+.service-card {background:#f9f9f9; border:2px solid #ccc; padding:25px; text-align:center; transition:0.3s; box-shadow:0 3px 6px rgba(0,0,0,0.1);}
+.service-card:hover {background:#003366; color:#fff; border-color:#003366; transform:translateY(-5px);}
+.service-card .icon {font-size:30px; display:block; margin-bottom:10px;}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -232,6 +247,7 @@ function closeLightbox() {
 
 </body>
 </html>
+
 
 
 
