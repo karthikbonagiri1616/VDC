@@ -19,7 +19,7 @@
 
     /* Header */
     header{background:#fff;border-bottom:3px solid var(--primary);text-align:center;}
-    header img.banner{width:100%;max-height:280px;object-fit:cover;}
+    header img.banner{width:100%;max-height:250px;object-fit:cover;}
     header h1{font-size:2rem;color:var(--primary);margin:10px 0;}
 
     /* Navbar */
@@ -166,52 +166,64 @@
 </section>
 
 <style>
-/* Notice Board Ticker */
-.news-ticker {
-  background: var(--light);
-  border: 2px solid var(--accent);
-  border-radius: 8px;
-  overflow: hidden;
-  position: relative;
-  height: 50px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
-}
+<!-- Notice Board Section -->
+<section class="notice-board">
+  <h2>📢 Notice Board</h2>
+  <div class="ticker">
+    <ul>
+      <li>📌 Admissions are open for 2025-26 academic year!</li>
+      <li>📌 NCC training sessions start from 1st September.</li>
+      <li>📌 College Cultural Fest scheduled on 15th October.</li>
+      <li>📌 Online classes available for Defence Coaching.</li>
+      <li>📌 Hostel facility is now open for new students.</li>
+    </ul>
+  </div>
+</section>
 
-.news-ticker ul {
+<style>
+/* Notice Board */
+.notice-board {
+  background: var(--light);
+  padding: 40px 20px;
+  text-align: center;
+  margin: 40px auto;
+  max-width: 1000px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.notice-board h2 {
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+.ticker {
+  overflow: hidden;
+  height: 40px;
+  position: relative;
+}
+.ticker ul {
   list-style: none;
   padding: 0;
   margin: 0;
   position: absolute;
-  width: 100%;
-  animation: scrollNews 12s linear infinite;
+  animation: tickerScroll 12s linear infinite;
 }
-
-.news-ticker li {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  padding-left: 15px;
-  background: #fff;
+.ticker li {
+  height: 40px;
+  line-height: 40px;
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
 }
-
-.news-ticker li span {
-  margin-right: 10px;
-  color: var(--secondary);
-  font-weight: bold;
-}
-
-.news-ticker li a {
-  color: var(--primary);
-  font-weight: 500;
-}
-
-@keyframes scrollNews {
-  0%   { top: 0; }
-  25%  { top: -50px; }
-  50%  { top: -100px; }
-  75%  { top: -150px; }
+@keyframes tickerScroll {
+  0% { top: 0; }
+  20% { top: -40px; }
+  40% { top: -80px; }
+  60% { top: -120px; }
+  80% { top: -160px; }
   100% { top: 0; }
 }
+</style>
+
 </style>
 
 
@@ -297,6 +309,7 @@
 
 </body>
 </html>
+
 
 
 
