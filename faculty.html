@@ -3,148 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faculty | Vaagdevi Junior & Degree College, Boath</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      color: #333;
-      line-height: 1.6;
-    }
-
-    /* Header Banner */
-    header img.banner {
-      width: 100%;
-      height: auto;   /* ✅ Makes image responsive */
-      display: block;
-    }
-
-    /* Navbar */
-    .navbar {
-      background: #004080;
-      padding: 10px 20px;
-      position: relative;
-    }
-
-    .navbar ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .navbar li { margin: 5px 10px; }
-
-    .navbar a {
-      text-decoration: none;
-      color: white;
-      font-weight: bold;
-      padding: 8px 15px;
-      border-radius: 5px;
-      transition: background 0.3s;
-    }
-
-    .navbar a:hover,
-    .navbar a.active {
-      background: #ff9800;
-      color: #fff;
-    }
-
-    /* Toggle button */
-    .menu-toggle {
-      display: none;
-      font-size: 28px;
-      color: white;
-      background: blue;
-      border: none;
-      cursor: pointer;
-      position: absolute;
-      right: 20px;
-      top: 10px;
-    }
-
-    @media (max-width: 768px) {
-      .navbar ul {
-        display: none;
-        flex-direction: column;
-        background: #004080;
-        width: 100%;
-        text-align: center;
-      }
-      .navbar ul.show { display: flex; }
-      .menu-toggle { display: block; }
-    }
-
-    /* Faculty Section */
-    .faculty-section {
-      padding: 50px 20px;
-      text-align: center;
-    }
-
-    .faculty-section h2 {
-      font-size: 1.2em;
-      color: #004080;
-      margin-bottom: 10px;
-    }
-
-    .faculty-section p {
-      font-size: 1.1em;
-      color: #555;
-      margin-bottom: 30px;
-    }
-
-    .faculty-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
-    }
-
-    .faculty-card {
-      background: white;
-      padding: 15px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .faculty-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-    }
-
-    .faculty-card img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .faculty-card h3 { color: #333; font-size: 1.2em; margin-bottom: 5px; }
-    .faculty-card p { color: #555; font-size: 0.95em; }
-
-    /* Footer */
-    footer {
-      background: #004080;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
+  <title>About - Vaagdevi Junior & Degree College</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- Header with Banner -->
+<!-- Header (keep as you gave me) -->
 <header>
-  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
+  <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
   <nav class="navbar">
-    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <ul id="menu">
-            <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
       <li><a href="management.html">Management</a></li>
       <li><a href="faculty.html">Faculty</a></li>
       <li><a href="Courses.html">Courses</a></li>
@@ -157,150 +27,53 @@
   </nav>
 </header>
 
-<!-- Faculty Section -->
-<section class="faculty-section">
-<div class="faculty-about-card">
-    <p>
-      At <strong>Vaagdevi Junior & Degree College, Boath</strong>, we are proud of our highly qualified and experienced faculty members. 
-      Our professors and lecturers are not only subject experts but also passionate educators who inspire and mentor students 
-      to achieve academic excellence and personal growth. With a blend of innovation, dedication, and commitment, our faculty 
-      ensures holistic learning in a nurturing environment.
-    </p>
-  </div>
-
-  <div class="faculty-grid">
-   <div class="faculty-card">
-    <img src="assets/img/SRINU (2).jpg" alt="Rajanala Srinivas" />
-    <div class="faculty-info">
-      <h2>Rajanala Srinivas</h2>
-      <p>Principal · Department of Chemistry</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/POSHETTY.jpg" alt="Kummari Poshetty" />
-    <div class="faculty-info">
-      <h2>Kummari Poshetty</h2>
-      <p>Department of  English</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/PRAVEEN.jpg" alt="Ch. Praveen Reddy" />
-    <div class="faculty-info">
-      <h2>Ch. Praveen Reddy</h2>
-      <p>Department of Zoology</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/MUTHYAM.jpg" alt="T. Muthyam" />
-    <div class="faculty-info">
-      <h2>T. Muthyam</h2>
-      <p>Department of Economics</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/SATHISH.jpg" alt="Chatla Sathish" />
-    <div class="faculty-info">
-      <h2>Chatla Sathish</h2>
-      <p>Department of Physics</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/KARTHIK BONAGIRI.jpg" alt="Karthik Bonagiri" />
-    <div class="faculty-info">
-      <h2>Karthik Bonagiri</h2>
-      <p>Department of Computer Science</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/PRASAD.jpg" alt="Adepu Prasad" />
-    <div class="faculty-info">
-      <h2>Adepu Prasad</h2>
-      <p>Department of Commerce</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/RAJESHWAR.jpg" alt="A. Rajeshwar" />
-    <div class="faculty-info">
-      <h2>A. Rajeshwar</h2>
-      <p>Department of Telugu</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/Pandari.jpg" alt="N. Pandari" />
-    <div class="faculty-info">
-      <h2>N. Pandari</h2>
-      <p>Department of Botany</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/DATHU.jpg" alt="K. Dathu" />
-    <div class="faculty-info">
-      <h2>K. Dathu</h2>
-      <p>Department of Mathematics</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/MALLIKA.jpg" alt="M. Mallika" />
-    <div class="faculty-info">
-      <h2>M. Mallika</h2>
-      <p>Department of Hindi</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/HARISH.jpg" alt="A. Harish Reddy" />
-    <div class="faculty-info">
-      <h2>A. Harish Reddy</h2>
-      <p>Department of Chemistry</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/SURESH.jpg" alt="T. Suresh" />
-    <div class="faculty-info">
-      <h2>T. Suresh</h2>
-      <p>Department of Zoology</p>
-    </div>
-  </div>
-
-  <div class="faculty-card">
-    <img src="assets/img/prashanth.jpg" alt="Boddu Prashanth" />
-    <div class="faculty-info">
-      <h2>Boddu Prashanth</h2>
-      <p>Department of Mathematics</p>
-    </div>
+<!-- Hero -->
+<section class="hero">
+  <div>
+    <h1>About Us</h1>
+    <p>Shaping Leaders. Building Futures. Serving the Nation.</p>
   </div>
 </section>
 
-<!-- Footer -->
-<footer>
-  <p>© 2025 Vaagdevi Junior & Degree College, Boath. All rights reserved.</p>
-</footer>
+<!-- About -->
+<section id="about" class="container grid">
+  <div>
+    <h2>Who We Are</h2>
+    <p><strong>Vaagdevi Defence Academy</strong> is among the top academies with expert faculty, 
+    study material, and personalized guidance to help students succeed.</p>
+    <p>We provide a learning environment that brings out the best in every student, 
+    instilling values, confidence, and excellence through modern teaching methods.</p>
+  </div>
+  <img src="assets/img/about.jpg" alt="About Vaagdevi College">
+</section>
 
-<script>
-  function toggleMenu() {
-    document.getElementById("menu").classList.toggle("show");
-  }
-</script>
+<!-- History -->
+<section id="history" class="container">
+  <h2>Our History</h2>
+  <div class="timeline">
+    <div><span>2005</span> Established as the first Junior & Degree College in Boath constituency.</div>
+    <div><span>2005–2015</span> Expanded programs, producing graduates excelling in Defence, Engineering, Arts, and Commerce.</div>
+    <div><span>2015–Present</span> Modernized with digital classes, strong infrastructure (5 acres campus), and Defence coaching.</div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="container">
+  <h2>Our Services</h2>
+  <div class="grid services">
+    <div>📘 Study Material</div>
+    <div>🎤 Seminars</div>
+    <div>🏫 Classroom Teaching</div>
+    <div>👨‍🏫 Guest Lectures</div>
+    <div>📝 Testing & Evaluation</div>
+    <div>💪 Physical Training</div>
+    <div>⚖️ Discipline</div>
+    <div>👩‍🏫 Experienced Faculty</div>
+    <div>💻 Computer Lab</div>
+    <div>⚽ Ground Facility</div>
+    <div>🍽️ Hostel & Food</div>
+  </div>
+</section>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
