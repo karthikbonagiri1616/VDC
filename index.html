@@ -17,13 +17,15 @@
     h1,h2,h3{margin-bottom:15px;font-weight:700;}
     .container{max-width:1200px;margin:auto;padding:50px 20px;}
 
-    /* Header */
-    header img.banner{width:100%;height:280px;object-fit:cover;display:block;}
+    /* Navbar */
     .navbar{background:var(--primary);}
     .navbar ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;}
     .navbar li{margin:0;}
     .navbar a{display:block;padding:12px 18px;color:#fff;text-decoration:none;transition:.3s;}
     .navbar a:hover,.navbar .active{background:var(--accent);color:#000;}
+
+    /* College Photo Banner */
+    .college-photo img{width:100%;height:320px;object-fit:cover;}
 
     /* Hero */
     .hero{background:linear-gradient(rgba(10,42,102,0.6),rgba(10,42,102,0.6)),url('assets/img/College.jpg') center/cover no-repeat;height:400px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;padding:20px;}
@@ -63,24 +65,26 @@
 </head>
 <body>
 
-<!-- Header -->
-<header>
-  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="management.html">Management</a></li>
-      <li><a href="faculty.html">Faculty</a></li>
-      <li><a href="Courses.html">Courses</a></li>
-      <li><a href="Notice board.html">Notice Board</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Admission.html">Admission</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
+<!-- Navbar -->
+<nav class="navbar">
+  <ul>
+    <li><a href="index.html" class="active">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="management.html">Management</a></li>
+    <li><a href="faculty.html">Faculty</a></li>
+    <li><a href="Courses.html">Courses</a></li>
+    <li><a href="Notice board.html">Notice Board</a></li>
+    <li><a href="nss.html">NSS</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="Admission.html">Admission</a></li>
+    <li><a href="Contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- College Photo -->
+<section class="college-photo">
+  <img src="assets/img/d.jpg" alt="Vaagdevi College Main Banner">
+</section>
 
 <!-- Hero -->
 <section class="hero">
