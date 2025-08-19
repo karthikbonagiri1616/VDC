@@ -338,18 +338,45 @@
 
 
 
-  <!-- Gallery Preview -->
-  <section class="container">
-    <h2>Campus Life</h2>
+  <!-- GALLERY SECTION -->
+<section id="gallery" class="container">
+  <h2>Our Gallery</h2>
+  <div class="gallery-wrapper">
+    <button class="gallery-btn left" onclick="scrollGallery(-1)">&#10094;</button>
     <div class="gallery">
-      <img src="assets/img/campus2.jpg" alt="Gallery 1">
-      <img src="assets/img/campus3.jpg" alt="Gallery 2">
-      <img src="assets/img/campus4.jpg" alt="Gallery 3">
+      <img src="assets/img/gallery1.jpg" alt="Gallery 1">
+      <img src="assets/img/gallery2.jpg" alt="Gallery 2">
+      <img src="assets/img/gallery3.jpg" alt="Gallery 3">
+      <img src="assets/img/gallery4.jpg" alt="Gallery 4">
+      <img src="assets/img/gallery5.jpg" alt="Gallery 5">
+      <img src="assets/img/gallery6.jpg" alt="Gallery 6">
     </div>
-    <div style="text-align:center;margin-top:20px;">
-      <a href="gallery.html" class="btn">View Gallery</a>
-    </div>
-  </section>
+    <button class="gallery-btn right" onclick="scrollGallery(1)">&#10095;</button>
+  </div>
+</section>
+
+<style>
+  #gallery{text-align:center;margin:60px auto;}
+  #gallery h2{font-size:2rem;margin-bottom:20px;color:#0a2a66;}
+  .gallery-wrapper{position:relative;overflow:hidden;}
+  .gallery{display:flex;gap:15px;overflow-x:auto;scroll-behavior:smooth;padding:10px;}
+  .gallery img{width:280px;height:180px;object-fit:cover;border-radius:10px;transition:transform .3s, box-shadow .3s;}
+  .gallery img:hover{transform:scale(1.08);box-shadow:0 4px 10px rgba(0,0,0,.3);}
+  .gallery::-webkit-scrollbar{display:none;}
+  .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:#0a2a66;color:#fff;border:none;font-size:24px;padding:8px 12px;cursor:pointer;border-radius:50%;transition:.3s;}
+  .gallery-btn:hover{background:#f9b800;color:#000;}
+  .gallery-btn.left{left:5px;}
+  .gallery-btn.right{right:5px;}
+</style>
+
+<script>
+function scrollGallery(direction) {
+  const gallery = document.querySelector('.gallery');
+  const scrollAmount = 320; // image width + gap
+  gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+</script>
+
 
 <!-- Latest News / Notice Board -->
 <section class="notice">
@@ -504,6 +531,7 @@ function scrollGallery(direction) {
 
 </body>
 </html>
+
 
 
 
