@@ -45,6 +45,120 @@ header img.banner {
 
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NSS – Vaagdevi Junior & Degree College</title>
+  <style>
+    :root {
+      --primary:#0a2a66;
+      --accent:#f9b800;
+      --light:#f8f9fc;
+      --dark:#222;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:Arial,Helvetica,sans-serif;line-height:1.6;color:var(--dark);}
+    img{max-width:100%;display:block;}
+    h1,h2,h3{margin-bottom:15px;font-weight:700;}
+    .container{max-width:1100px;margin:auto;padding:50px 20px;}
+
+    /* Header */
+    header img.banner{width:100%;height:250px;object-fit:cover;display:block;}
+    .navbar{background:var(--primary);}
+    .navbar ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;}
+    .navbar li{margin:0;}
+    .navbar a{display:block;padding:12px 18px;color:#fff;text-decoration:none;transition:.3s;}
+    .navbar a:hover,.navbar .active{background:var(--accent);color:#000;}
+
+    /* Activities */
+    #nss h2{text-align:center;color:var(--primary);margin-bottom:30px;}
+    #nss .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px;}
+    .activity{background:var(--light);border:1px solid #ddd;border-radius:8px;overflow:hidden;transition:.3s;}
+    .activity img{height:200px;object-fit:cover;width:100%;}
+    .activity .content{padding:20px;}
+    .activity h3{color:var(--primary);margin-bottom:10px;}
+    .activity p{text-align:justify;font-size:15px;}
+    .activity:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+
+    /* Footer */
+    footer{background:var(--primary);color:#fff;text-align:center;padding:25px 15px;}
+    footer p{margin:5px 0;}
+    footer a{color:var(--accent);text-decoration:none;margin:0 8px;}
+    footer a:hover{text-decoration:underline;}
+  </style>
+</head>
+<body>
+
+<!-- Header (same as About page) -->
+<header>
+  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="management.html">Management</a></li>
+      <li><a href="faculty.html">Faculty</a></li>
+      <li><a href="Courses.html">Courses</a></li>
+      <li><a href="Notice board.html">Notice Board</a></li>
+      <li><a href="nss.html" class="active">NSS</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="Admission.html">Admission</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- NSS Activities -->
+<section id="nss" class="container">
+  <h2>NSS Activities</h2>
+  <div class="grid">
+    <div class="activity">
+      <img src="assets/img/nss1.jpg" alt="Cleanliness Drive">
+      <div class="content">
+        <h3>Cleanliness Drive</h3>
+        <p>Our NSS volunteers actively participate in Swachh Bharat campaigns, ensuring a clean and hygienic environment in campus and surrounding areas.</p>
+      </div>
+    </div>
+    <div class="activity">
+      <img src="assets/img/nss2.jpg" alt="Tree Plantation">
+      <div class="content">
+        <h3>Tree Plantation</h3>
+        <p>We organize tree plantation drives to spread awareness about environmental sustainability and contribute to greener surroundings.</p>
+      </div>
+    </div>
+    <div class="activity">
+      <img src="assets/img/nss3.jpg" alt="Blood Donation Camp">
+      <div class="content">
+        <h3>Blood Donation Camp</h3>
+        <p>NSS conducts regular blood donation camps, encouraging students to contribute towards saving lives and building a compassionate society.</p>
+      </div>
+    </div>
+    <div class="activity">
+      <img src="assets/img/nss4.jpg" alt="Awareness Program">
+      <div class="content">
+        <h3>Awareness Programs</h3>
+        <p>Volunteers arrange health, civic, and social awareness programs in villages, creating positive impact in rural communities.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Vaagdevi Junior & Degree College, Boath. All Rights Reserved.<br>
+  <small>Website Designed by Karthik Bonagiri-9014443040</small></p> 
+  <p>
+    <a href="index.html">Home</a> | 
+    <a href="about.html">About</a> | 
+    <a href="Courses.html">Courses</a> | 
+    <a href="Contact.html">Contact</a>
+  </p>
+</footer>
+
+</body>
+</html>
 
 <!-- Header with Banner -->
 <header>
@@ -146,6 +260,7 @@ function closeLightbox() {
 
 </body>
 </html>
+
 
 
 
