@@ -30,89 +30,131 @@
     nav a:hover,nav .active{background:var(--accent);color:#000;}
 
     /* Hero Section */
-.hero {
-  position: relative;
-  height: 450px;
-  background: url('assets/img/College.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-}
-
-/* Removed the dark overlay (.hero::after) */
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-}
-.hero-content h2 {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
-  animation: fadeInDown 2s;
-}
-.hero-content p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-  animation: fadeInUp 2s;
-}
-.btn {
-  background: var(--accent);
-  color: #000;
-  padding: 10px 20px;
-  border-radius: 5px;
-  font-weight: bold;
-  transition: .3s;
-}
-.btn:hover {
-  background: #fff;
-  color: var(--primary);
-}
-
-@keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+    .hero {
+      position: relative;
+      height: 450px;
+      background: url('assets/img/College.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
 
     /* Section Common */
     .container{max-width:1100px;margin:auto;padding:60px 20px;}
     section h2{text-align:center;margin-bottom:35px;color:var(--primary);font-size:2rem;position:relative;}
     section h2::after{content:"";display:block;width:80px;height:4px;background:var(--accent);margin:10px auto 0;border-radius:2px;}
 
-    /* About Preview */
-    .about-preview{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center;}
-    .about-preview p{margin-bottom:15px;text-align:justify;}
-    @media(max-width:768px){.about-preview{grid-template-columns:1fr;}}
+    /* Notice / News Ticker */
+    #news{text-align:center;margin:20px auto;}
+    #news h2{font-size:1.5rem;margin-bottom:15px;color:#0a2a66;}
+    .news-ticker{background:#f1f5ff;border:2px solid #0a2a66;padding:12px;overflow:hidden;position:relative;border-radius:8px;}
+    .news-ticker ul{list-style:none;display:flex;gap:50px;margin:0;padding:0;animation:scroll-left 20s linear infinite;}
+    .news-ticker li{white-space:nowrap;font-size:1.05rem;font-weight:500;color:#222;}
+    .news-ticker:hover ul{animation-play-state:paused;}
+    .tag{padding:2px 8px;border-radius:5px;font-size:0.85rem;margin-right:8px;color:#fff;font-weight:bold;}
+    .tag.important{background:#d9534f;}
+    .tag.event{background:#5bc0de;}
+    .tag.update{background:#5cb85c;}
+    .tag.alert{background:#f0ad4e;}
+    .tag.achievement{background:#337ab7;}
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
 
-    /* Courses */
-    .courses{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;}
-    .course-card{background:linear-gradient(135deg,#f9b800,#ffdd57);padding:25px;border-radius:12px;text-align:center;color:#000;transition:.3s;box-shadow:0 4px 8px rgba(0,0,0,0.2);}
-    .course-card:hover{transform:scale(1.05);}
-    .course-card h3{margin-bottom:10px;font-size:1.2rem;}
+    /* About Section */
+    .about-home {
+      background: linear-gradient(135deg, #f9b80033, #0a2a6633);
+      padding: 60px 20px;
+    }
+    .about-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .about-text h2 {
+      font-size: 2rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+      border-left: 6px solid var(--accent);
+      padding-left: 12px;
+    }
+    .about-text p {
+      margin-bottom: 15px;
+      color: #333;
+      font-size: 1.05rem;
+      text-align: justify;
+    }
+    .btn-about {
+      display: inline-block;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-about:hover {background: var(--accent);color:#000;}
+    .about-image img {border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,0.2);}
+    @media(max-width:768px){
+      .about-container {grid-template-columns:1fr;text-align:center;}
+      .about-text h2 {text-align:center;border:none;padding:0;}
+    }
+
+    /* Courses Section */
+    .courses {
+      background: linear-gradient(135deg, #f9f9f9, #eef3ff);
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .courses-row {display:flex;justify-content:center;gap:25px;flex-wrap:wrap;}
+    .course-card {
+      background:#fff;flex:1 1 300px;max-width:320px;padding:25px;border-radius:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);transition:transform 0.3s, box-shadow 0.3s;text-align:center;
+    }
+    .course-card span{font-size:40px;display:block;margin-bottom:10px;}
+    .course-card h3{margin-bottom:10px;color:var(--primary);}
+    .course-card p{font-size:0.95rem;color:#444;margin-bottom:15px;}
+    .course-card .btn{padding:8px 15px;background:var(--primary);color:#fff;border-radius:6px;text-decoration:none;}
+    .course-card .btn:hover{background:var(--accent);color:#000;}
+    .course-card:hover{transform:translateY(-10px);box-shadow:0 8px 20px rgba(0,0,0,0.15);}
+    .course-card.junior{border-top:4px solid #007bff;}
+    .course-card.degree{border-top:4px solid #28a745;}
+    .course-card.defence{border-top:4px solid #ff5733;}
 
     /* Gallery */
-    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px;}
-    .gallery img{border-radius:10px;transition:.3s;cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,0.3);}
-    .gallery img:hover{transform:scale(1.07);}
+    #gallery{text-align:center;margin:60px auto;}
+    #gallery h2{font-size:2rem;margin-bottom:20px;color:#0a2a66;}
+    .gallery-wrapper{position:relative;overflow:hidden;}
+    .gallery{display:flex;gap:15px;overflow-x:auto;scroll-behavior:smooth;padding:10px;}
+    .gallery img{width:280px;height:180px;object-fit:cover;border-radius:10px;transition:transform .3s, box-shadow .3s;}
+    .gallery img:hover{transform:scale(1.08);box-shadow:0 4px 10px rgba(0,0,0,.3);}
+    .gallery::-webkit-scrollbar{display:none;}
+    .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:#0a2a66;color:#fff;border:none;font-size:24px;padding:8px 12px;cursor:pointer;border-radius:50%;transition:.3s;}
+    .gallery-btn:hover{background:#f9b800;color:#000;}
+    .gallery-btn.left{left:5px;}
+    .gallery-btn.right{right:5px;}
 
-    /* Notice Board */
-    .news{background:var(--light);padding:40px 20px;border-radius:12px;box-shadow:0 3px 6px rgba(0,0,0,0.2);}
-    .news ul{list-style:none;}
-    .news li{padding:12px;margin:10px 0;border-left:5px solid var(--accent);background:#fff;transition:.3s;}
-    .news li:hover{transform:translateX(5px);background:#fafafa;}
-    .news li span{color:var(--secondary);font-weight:bold;margin-right:10px;}
-    .news a{color:var(--primary);font-weight:500;}
-
-    /* Call-to-action */
-    .cta{background:linear-gradient(135deg,#0a2a66,#1d4ed8);color:#fff;text-align:center;padding:50px 20px;}
-    .cta h2{margin-bottom:15px;font-size:2rem;}
-    .cta p{margin-bottom:20px;}
+    /* Join Section */
+    .join-section {display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;
+      background:linear-gradient(135deg, var(--primary), var(--secondary));color:#fff;
+      padding:60px 20px;border-radius:12px;margin:60px auto;max-width:1200px;
+      box-shadow:0 5px 12px rgba(0,0,0,0.3);}
+    .join-content h2{font-size:2rem;margin-bottom:15px;}
+    .join-content p{font-size:1.1rem;margin-bottom:20px;line-height:1.6;}
+    .join-content .btn{background:var(--accent);color:#000;padding:12px 25px;border-radius:6px;text-decoration:none;font-weight:bold;}
+    .join-content .btn:hover{background:#fff;color:var(--primary);}
+    .join-image img{border-radius:10px;box-shadow:0 5px 12px rgba(0,0,0,0.4);}
+    @media(max-width:768px){
+      .join-section{grid-template-columns:1fr;text-align:center;}
+      .join-image{order:-1;}
+    }
 
     /* Footer */
     footer{background:var(--primary);color:#fff;text-align:center;padding:25px 15px;margin-top:40px;}
@@ -124,9 +166,7 @@
 
   <!-- Header -->
   <header>
-   
     <img src="assets/img/d.jpg" alt="College Banner" class="banner">
-    
     <nav>
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -143,354 +183,79 @@
     </nav>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
- 
+  <!-- News / Notice Section (AFTER NAV) -->
+  <section id="news" class="container">
+    <h2>Latest News & Notices</h2>
+    <div class="news-ticker">
+      <ul>
+        <li><span class="tag important">Notice</span> Admissions open for 2025 – Apply Now!</li>
+        <li><span class="tag event">Event</span> NSS Camp scheduled on 5th Sept at Boath Village.</li>
+        <li><span class="tag update">Update</span> New computer lab inaugurated for degree students.</li>
+        <li><span class="tag alert">Alert</span> Mid-term exams begin from 10th September.</li>
+        <li><span class="tag achievement">Success</span> 15 students selected for Indian Army this year.</li>
+      </ul>
+    </div>
   </section>
 
+  <!-- Hero -->
+  <section class="hero"></section>
+
   <!-- About Section -->
-<section class="about-home">
-  <div class="about-container">
-    <div class="about-text">
-      <h2>About Us</h2>
-      <p>
-        Vaagdevi Junior & Degree College, Boath was established in 2005. 
-        Known as the first college in our constituency, we are dedicated to 
-        providing quality education and empowering students for a brighter future.
-      </p>
-      <p>
-        With expert faculty, modern infrastructure, defence training, and 
-        co-curricular activities, we aim at holistic student development.
-      </p>
-      <a href="about.html" class="btn-about">Read More →</a>
-    </div>
-    <div class="about-image">
-      <img src="assets/img/College.jpg" alt="About Vaagdevi College">
-    </div>
-  </div>
-</section>
-
-<style>
-/* About Section */
-.about-home {
-  background: linear-gradient(135deg, #f9b80033, #0a2a6633);
-  padding: 60px 20px;
-}
-.about-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-  max-width: 1100px;
-  margin: auto;
-}
-.about-text h2 {
-  font-size: 2rem;
-  color: var(--primary);
-  margin-bottom: 20px;
-  border-left: 6px solid var(--accent);
-  padding-left: 12px;
-}
-.about-text p {
-  margin-bottom: 15px;
-  color: #333;
-  font-size: 1.05rem;
-  text-align: justify;
-}
-.btn-about {
-  display: inline-block;
-  padding: 12px 20px;
-  background: var(--primary);
-  color: #fff;
-  font-weight: 600;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-.btn-about:hover {
-  background: var(--accent);
-  color: #000;
-}
-.about-image img {
-  border-radius: 10px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
-}
-@media(max-width: 768px) {
-  .about-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .about-text h2 {
-    text-align: center;
-    border: none;
-    padding: 0;
-  }
-}
-</style>
-
-
- <!-- Courses Section -->
-<section class="courses">
-  <div class="container">
-    <h2>Our Courses</h2>
-    <p class="section-subtitle">Providing top-quality education from Junior to Degree & Defence Training</p>
-
-    <div class="courses-row">
-      <div class="course-card junior">
-        <span>📘</span>
-        <h3>Junior College</h3>
-        <p>Intermediate courses with focus on academics and foundation building.</p>
-        <a href="Courses.html" class="btn">Read More</a>
+  <section class="about-home">
+    <div class="about-container">
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>Vaagdevi Junior & Degree College, Boath was established in 2005. Known as the first college in our constituency, we are dedicated to providing quality education and empowering students for a brighter future.</p>
+        <p>With expert faculty, modern infrastructure, defence training, and co-curricular activities, we aim at holistic student development.</p>
+        <a href="about.html" class="btn-about">Read More →</a>
       </div>
-
-      <div class="course-card degree">
-        <span>🎓</span>
-        <h3>Degree College</h3>
-        <p>Undergraduate programs in Science, Arts & Commerce with career support.</p>
-        <a href="Courses.html" class="btn">Read More</a>
-      </div>
-
-      <div class="course-card defence">
-        <span>🪖</span>
-        <h3>Defence Academy</h3>
-        <p>Special coaching for Defence exams – NDA, Army, Navy, Airforce & Police.</p>
-        <a href="Courses.html" class="btn">Read More</a>
+      <div class="about-image">
+        <img src="assets/img/College.jpg" alt="About Vaagdevi College">
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<style>
-/* Courses Section */
-.courses {
-  background: linear-gradient(135deg, #f9f9f9, #eef3ff);
-  padding: 60px 20px;
-  text-align: center;
-}
-.courses h2 {
-  color: var(--primary);
-  margin-bottom: 10px;
-  font-size: 2rem;
-}
-.section-subtitle {
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-  color: #666;
-}
-
-/* Row layout (cards side by side) */
-.courses-row {
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  flex-wrap: wrap; /* allows wrap on mobile */
-}
-
-.course-card {
-  background: #fff;
-  flex: 1 1 300px;
-  max-width: 320px;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
-}
-.course-card span {
-  font-size: 40px;
-  display: block;
-  margin-bottom: 10px;
-}
-.course-card h3 {
-  margin-bottom: 10px;
-  color: var(--primary);
-}
-.course-card p {
-  font-size: 0.95rem;
-  color: #444;
-  margin-bottom: 15px;
-}
-.course-card .btn {
-  display: inline-block;
-  padding: 8px 15px;
-  background: var(--primary);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-.course-card .btn:hover {
-  background: var(--accent);
-  color: #000;
-}
-
-/* Hover Effect */
-.course-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Colors for each course */
-.course-card.junior { border-top: 4px solid #007bff; }
-.course-card.degree { border-top: 4px solid #28a745; }
-.course-card.defence { border-top: 4px solid #ff5733; }
-</style>
-
-
-
-  <!-- GALLERY SECTION -->
-<section id="gallery" class="container">
-  <h2>Our Gallery</h2>
-  <div class="gallery-wrapper">
-    <button class="gallery-btn left" onclick="scrollGallery(-1)">&#10094;</button>
-    <div class="gallery">
-      <img src="assets/img/gallery1.jpg" alt="Gallery 1">
-      <img src="assets/img/gallery2.jpg" alt="Gallery 2">
-      <img src="assets/img/gallery3.jpg" alt="Gallery 3">
-      <img src="assets/img/gallery4.jpg" alt="Gallery 4">
-      <img src="assets/img/gallery5.jpg" alt="Gallery 5">
-      <img src="assets/img/gallery6.jpg" alt="Gallery 6">
+  <!-- Courses -->
+  <section class="courses">
+    <div class="container">
+      <h2>Our Courses</h2>
+      <p class="section-subtitle">Providing top-quality education from Junior to Degree & Defence Training</p>
+      <div class="courses-row">
+        <div class="course-card junior"><span>📘</span><h3>Junior College</h3><p>Intermediate courses with focus on academics and foundation building.</p><a href="Courses.html" class="btn">Read More</a></div>
+        <div class="course-card degree"><span>🎓</span><h3>Degree College</h3><p>Undergraduate programs in Science, Arts & Commerce with career support.</p><a href="Courses.html" class="btn">Read More</a></div>
+        <div class="course-card defence"><span>🪖</span><h3>Defence Academy</h3><p>Special coaching for Defence exams – NDA, Army, Navy, Airforce & Police.</p><a href="Courses.html" class="btn">Read More</a></div>
+      </div>
     </div>
-    <button class="gallery-btn right" onclick="scrollGallery(1)">&#10095;</button>
-  </div>
-</section>
+  </section>
 
-<style>
-  #gallery{text-align:center;margin:60px auto;}
-  #gallery h2{font-size:2rem;margin-bottom:20px;color:#0a2a66;}
-  .gallery-wrapper{position:relative;overflow:hidden;}
-  .gallery{display:flex;gap:15px;overflow-x:auto;scroll-behavior:smooth;padding:10px;}
-  .gallery img{width:280px;height:180px;object-fit:cover;border-radius:10px;transition:transform .3s, box-shadow .3s;}
-  .gallery img:hover{transform:scale(1.08);box-shadow:0 4px 10px rgba(0,0,0,.3);}
-  .gallery::-webkit-scrollbar{display:none;}
-  .gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:#0a2a66;color:#fff;border:none;font-size:24px;padding:8px 12px;cursor:pointer;border-radius:50%;transition:.3s;}
-  .gallery-btn:hover{background:#f9b800;color:#000;}
-  .gallery-btn.left{left:5px;}
-  .gallery-btn.right{right:5px;}
-</style>
+  <!-- Gallery -->
+  <section id="gallery" class="container">
+    <h2>Our Gallery</h2>
+    <div class="gallery-wrapper">
+      <button class="gallery-btn left" onclick="scrollGallery(-1)">&#10094;</button>
+      <div class="gallery">
+        <img src="assets/img/gallery1.jpg" alt="Gallery 1">
+        <img src="assets/img/gallery2.jpg" alt="Gallery 2">
+        <img src="assets/img/gallery3.jpg" alt="Gallery 3">
+        <img src="assets/img/gallery4.jpg" alt="Gallery 4">
+        <img src="assets/img/gallery5.jpg" alt="Gallery 5">
+        <img src="assets/img/gallery6.jpg" alt="Gallery 6">
+      </div>
+      <button class="gallery-btn right" onclick="scrollGallery(1)">&#10095;</button>
+    </div>
+  </section>
 
-<script>
-function scrollGallery(direction) {
-  const gallery = document.querySelector('.gallery');
-  const scrollAmount = 320; // image width + gap
-  gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-}
-</script>
-
-
-<!-- LATEST NEWS / NOTICE BOARD -->
-<section id="news" class="container">
-  <h2>Latest News & Notices</h2>
-  <div class="news-ticker">
-    <ul>
-      <li><span class="tag important">Notice</span> Admissions open for 2025 – Apply Now!</li>
-      <li><span class="tag event">Event</span> NSS Camp scheduled on 5th Sept at Boath Village.</li>
-      <li><span class="tag update">Update</span> New computer lab inaugurated for degree students.</li>
-      <li><span class="tag alert">Alert</span> Mid-term exams begin from 10th September.</li>
-      <li><span class="tag achievement">Success</span> 15 students selected for Indian Army this year.</li>
-    </ul>
-  </div>
-</section>
-
-<style>
-  /* Section */
-  #news{text-align:center;margin:60px auto;}
-  #news h2{font-size:2rem;margin-bottom:20px;color:#0a2a66;}
-
-  /* News Ticker */
-  .news-ticker{background:#f1f5ff;border:2px solid #0a2a66;padding:12px;overflow:hidden;position:relative;border-radius:8px;}
-  .news-ticker ul{list-style:none;display:flex;gap:50px;margin:0;padding:0;animation:scroll-left 20s linear infinite;}
-  .news-ticker li{white-space:nowrap;font-size:1.1rem;font-weight:500;color:#222;}
-  .news-ticker:hover ul{animation-play-state:paused;}
-
-  /* Tags */
-  .tag{padding:2px 8px;border-radius:5px;font-size:0.85rem;margin-right:8px;color:#fff;font-weight:bold;}
-  .tag.important{background:#d9534f;}
-  .tag.event{background:#5bc0de;}
-  .tag.update{background:#5cb85c;}
-  .tag.alert{background:#f0ad4e;}
-  .tag.achievement{background:#337ab7;}
-
-  /* Animation */
-  @keyframes scroll-left {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-</style>
-
-
-
-</style>
-
-
- <!-- Join Vaagdevi Section -->
-<section class="join-section">
-  <div class="join-content">
-    <h2>🎓 Join Vaagdevi Defence Academy</h2>
-    <p>
-      Empower yourself with knowledge, discipline, and confidence to achieve your dream career in Defence and beyond. 
-      Our expert faculty and holistic training ensure you are always one step ahead.
-    </p>
-    <a href="Admission.html" class="btn">Apply Now</a>
-  </div>
-  <div class="join-image">
-    <img src="assets/img/College.jpg" alt="Join Vaagdevi Defence Academy">
-  </div>
-</section>
-
-<style>
-/* Join Vaagdevi Section */
-.join-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 40px;
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: #fff;
-  padding: 60px 20px;
-  border-radius: 12px;
-  margin: 60px auto;
-  max-width: 1200px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.3);
-}
-.join-content h2 {
-  font-size: 2rem;
-  margin-bottom: 15px;
-  color: #fff;
-}
-.join-content p {
-  font-size: 1.1rem;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-.join-content .btn {
-  background: var(--accent);
-  color: #000;
-  padding: 12px 25px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-.join-content .btn:hover {
-  background: #fff;
-  color: var(--primary);
-}
-.join-image img {
-  border-radius: 10px;
-  box-shadow: 0 5px 12px rgba(0,0,0,0.4);
-}
-@media(max-width:768px){
-  .join-section {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-  .join-image {
-    order: -1;
-  }
-}
-</style>
-
+  <!-- Join Vaagdevi -->
+  <section class="join-section">
+    <div class="join-content">
+      <h2>🎓 Join Vaagdevi Defence Academy</h2>
+      <p>Empower yourself with knowledge, discipline, and confidence to achieve your dream career in Defence and beyond. Our expert faculty and holistic training ensure you are always one step ahead.</p>
+      <a href="Admission.html" class="btn">Apply Now</a>
+    </div>
+    <div class="join-image">
+      <img src="assets/img/College.jpg" alt="Join Vaagdevi Defence Academy">
+    </div>
+  </section>
 
   <!-- Footer -->
   <footer>
@@ -502,30 +267,14 @@ function scrollGallery(direction) {
       <a href="Contact.html">Contact</a>
     </p>
   </footer>
-<script>
-function scrollGallery(direction) {
-  const gallery = document.querySelector('.gallery');
-  const scrollAmount = 300; // pixels per click
-  gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
-}
-</script>
+
+  <script>
+    function scrollGallery(direction) {
+      const gallery = document.querySelector('.gallery');
+      const scrollAmount = 300;
+      gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+  </script>
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
