@@ -183,22 +183,31 @@
     </nav>
   </header>
 
- <!-- Notice Board Strip -->
+<!-- Notice Board Strip -->
 <section id="news-strip">
   <div class="news-container">
-    <h2 class="notice-title">Notice Board:</h2>
     
+    <!-- Left: Notice Board -->
+    <div class="notice-left">
+      <h2 class="notice-title">📌 Notice Board:</h2>
+    </div>
+    
+    <!-- Middle: Ticker -->
     <div class="news-ticker">
       <ul>
-        <li><span class="tag notice">Notice</span> Admissions open for 2025 – Apply Now!</li>
-        <li><span class="tag event">Event</span> NSS Camp scheduled on 5th Sept at Boath Village.</li>
-        <li><span class="tag update">Update</span> New computer lab inaugurated for degree students.</li>
-        <li><span class="tag alert">Alert</span> Mid-term exams begin from 10th September.</li>
-        <li><span class="tag success">Success</span> 15 students selected for Indian Army this year.</li>
+        <li><span class="tag notice">🔔 Notice</span> Admissions open for 2025 – Apply Now!</li>
+        <li><span class="tag event">🎉 Event</span> NSS Camp scheduled on 5th Sept at Boath Village.</li>
+        <li><span class="tag update">📢 Update</span> New computer lab inaugurated for degree students.</li>
+        <li><span class="tag alert">⚠️ Alert</span> Mid-term exams begin from 10th September.</li>
+        <li><span class="tag success">✅ Success</span> 15 students selected for Indian Army this year.</li>
       </ul>
     </div>
-
-    <a href="Notice board.html" class="view-all">View All →</a>
+    
+    <!-- Right: View All -->
+    <div class="notice-right">
+      <a href="Notice board.html" class="view-all">View All →</a>
+    </div>
+    
   </div>
 </section>
 
@@ -215,61 +224,52 @@
 .news-container {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* pushes left & right */
+  justify-content: space-between;
   max-width: 1200px;
   margin: auto;
   padding: 0 15px;
+  gap: 15px;
 }
 
+/* Left side */
+.notice-left {
+  flex: 0 0 auto;
+}
 .notice-title {
   color: var(--primary);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin: 0;
+  font-weight: bold;
   white-space: nowrap;
-  flex: 0 0 auto; /* fixed left */
 }
 
+/* Middle Ticker */
 .news-ticker {
-  flex: 1; /* take remaining space */
+  flex: 1;
   overflow: hidden;
   position: relative;
-  margin: 0 20px;
 }
-
 .news-ticker ul {
   list-style: none;
   display: flex;
   gap: 50px;
   margin: 0;
   padding: 0;
-  animation: scroll-left 18s linear infinite;
+  animation: scroll-left 22s linear infinite;
 }
-
 .news-ticker li {
   white-space: nowrap;
   font-size: 1rem;
   color: #222;
 }
-
 .news-ticker:hover ul {
   animation-play-state: paused;
 }
 
-/* Tags */
-.tag {
-  padding: 2px 8px;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  margin-right: 8px;
-  color: #fff;
-  font-weight: bold;
+/* Right side button */
+.notice-right {
+  flex: 0 0 auto;
 }
-.tag.notice { background: #d9534f; }     /* red */
-.tag.event { background: #5bc0de; }      /* blue */
-.tag.update { background: #5cb85c; }     /* green */
-.tag.alert { background: #f0ad4e; }      /* orange */
-.tag.success { background: #337ab7; }    /* navy */
-
 .view-all {
   background: var(--accent);
   color: #000;
@@ -280,12 +280,26 @@
   text-decoration: none;
   white-space: nowrap;
   transition: 0.3s;
-  flex: 0 0 auto; /* fixed right */
 }
 .view-all:hover {
   background: var(--primary);
   color: #fff;
 }
+
+/* Tag Styles */
+.tag {
+  padding: 3px 10px;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  margin-right: 8px;
+  color: #fff;
+  font-weight: bold;
+}
+.tag.notice { background: #d9534f; }
+.tag.event { background: #5bc0de; }
+.tag.update { background: #5cb85c; }
+.tag.alert { background: #f0ad4e; }
+.tag.success { background: #337ab7; }
 
 @keyframes scroll-left {
   0% { transform: translateX(100%); }
@@ -374,6 +388,7 @@
 
 </body>
 </html>
+
 
 
 
