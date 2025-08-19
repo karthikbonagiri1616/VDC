@@ -351,63 +351,65 @@
     </div>
   </section>
 
-<!-- Notice Board -->
-<section class="notice-board">
+<!-- Latest News / Notice Board -->
+<section class="notice">
   <div class="container">
-    <h2>Latest Notices</h2>
-    <div class="ticker">
+    <h2>Latest News & Notices</h2>
+    <div class="news-ticker">
       <ul>
-        <li>📢 Admissions Open for 2025-26 – Apply Now!</li>
-        <li>🎉 NSS Special Camp scheduled from Sept 15</li>
-        <li>🏆 Students won 1st Prize in District Sports Meet</li>
-        <li>📘 New Library Books Available from This Month</li>
-        <li>🎓 Guest Lecture on Defence Careers this Sunday</li>
-        <li>💻 Computer Lab upgraded with new systems</li>
-        <li>🍽️ Hostel facility now available for Degree students</li>
+        <li>📢 Admissions open for 2025-26 Batch (Junior, Degree, Defence).</li>
+        <li>🏆 Our students secured top ranks in Defence entrance exams.</li>
+        <li>📚 Guest Lecture on Career Opportunities – Aug 25, 2025.</li>
+        <li>🌱 NSS Tree Plantation Drive – Sept 5, 2025.</li>
+        <li>🎉 Annual Day Celebrations – Oct 15, 2025.</li>
       </ul>
     </div>
   </div>
 </section>
 
 <style>
-/* Notice Board */
-.notice-board {
-  background: #f9f9f9;
-  padding: 40px 20px;
-  border-top: 4px solid var(--accent);
-  border-bottom: 4px solid var(--accent);
-}
-.notice-board h2 {
+/* Notice Section */
+.notice {
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 50px 20px;
   text-align: center;
-  margin-bottom: 20px;
-  color: var(--primary);
 }
-.ticker {
+.notice h2 {
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+}
+
+/* News Ticker */
+.news-ticker {
+  height: 50px;  /* visible height */
   overflow: hidden;
-  height: 150px; /* show ~5 notices */
   position: relative;
 }
-.ticker ul {
+.news-ticker ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  position: absolute;
-  animation: tickerScroll 15s linear infinite;
+  animation: ticker 15s linear infinite;
 }
-.ticker li {
-  font-size: 1.05rem;
-  padding: 8px 15px;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
-  color: #333;
+.news-ticker li {
+  height: 50px;
+  line-height: 50px;
+  font-size: 1rem;
+  color: #222;
 }
 
-/* Scroll Animation */
-@keyframes tickerScroll {
-  0% { top: 0; }
-  100% { top: -100%; }
+/* Animation */
+@keyframes ticker {
+  0% { transform: translateY(0); }
+  20% { transform: translateY(-50px); }
+  40% { transform: translateY(-100px); }
+  60% { transform: translateY(-150px); }
+  80% { transform: translateY(-200px); }
+  100% { transform: translateY(0); }
 }
 </style>
+
 
 
 </style>
@@ -495,6 +497,7 @@
 
 </body>
 </html>
+
 
 
 
