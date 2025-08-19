@@ -183,19 +183,95 @@
     </nav>
   </header>
 
-  <!-- News / Notice Section (AFTER NAV) -->
-  <section id="news" class="container">
-    <h2>Latest News & Notices</h2>
+  <!-- Notice Board Strip -->
+<section id="news-strip">
+  <div class="news-container">
+    <h2>Notice Board:</h2>
     <div class="news-ticker">
       <ul>
-        <li><span class="tag important">Notice</span> Admissions open for 2025 – Apply Now!</li>
-        <li><span class="tag event">Event</span> NSS Camp scheduled on 5th Sept at Boath Village.</li>
-        <li><span class="tag update">Update</span> New computer lab inaugurated for degree students.</li>
-        <li><span class="tag alert">Alert</span> Mid-term exams begin from 10th September.</li>
-        <li><span class="tag achievement">Success</span> 15 students selected for Indian Army this year.</li>
+        <li>Admissions open for 2025 – Apply Now!</li>
+        <li>NSS Camp scheduled on 5th Sept at Boath Village.</li>
+        <li>New computer lab inaugurated for degree students.</li>
+        <li>Mid-term exams begin from 10th September.</li>
+        <li>15 students selected for Indian Army this year.</li>
       </ul>
     </div>
-  </section>
+    <a href="Notice board.html" class="view-all">View All →</a>
+  </div>
+</section>
+
+<style>
+/* Notice Strip */
+#news-strip {
+  background: #f1f5ff;
+  border-top: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.news-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+#news-strip h2 {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.news-ticker {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.news-ticker ul {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  margin: 0;
+  padding: 0;
+  animation: scroll-left 18s linear infinite;
+}
+
+.news-ticker li {
+  white-space: nowrap;
+  font-size: 1rem;
+  color: #222;
+}
+
+.news-ticker:hover ul {
+  animation-play-state: paused;
+}
+
+.view-all {
+  background: var(--accent);
+  color: #000;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.view-all:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+</style>
 
   <!-- Hero -->
   <section class="hero"></section>
@@ -278,3 +354,4 @@
 
 </body>
 </html>
+
