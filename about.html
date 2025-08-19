@@ -1,477 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vaagdevi Junior & Degree College, Boath – About & History</title>
-  <meta name="description" content="About Vaagdevi Junior & Degree College, Boath – mission, vision, history timeline, leadership, achievements, FAQ and gallery."/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Vaagdevi Junior & Degree College</title>
+  <link rel="stylesheet" href="style.css">
   <style>
-    /* ====== Base Reset ====== */
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'; color: #1d2630; background: #ffffff; }
+    /* General Reset */
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: Arial, sans-serif; line-height:1.6; color:#333;}
+    h2 {margin-bottom:10px; text-transform:uppercase; color:#003366;}
+    section {padding:60px 20px;}
+    .container {max-width:1100px; margin:auto;}
 
-    :root{
-      --brand: #0e6dfd;      /* Primary */
-      --brand-600:#0b59cc;   /* Hover */
-      --accent:#f59e0b;      /* Accent */
-      --ink:#1d2630;         /* Body text */
-      --muted:#6b7280;       /* Muted text */
-      --surface:#f5f7fb;     /* Light surface */
-      --card:#ffffff;        /* Card bg */
-      --border:#e5e7eb;      /* Borders */
-      --success:#16a34a;     /* Success */
-    }
+    /* Sub Nav */
+    .sub-nav {display:flex; justify-content:center; gap:20px; background:#003366; padding:10px; position:sticky; top:0; z-index:100;}
+    .sub-nav a {color:#fff; text-decoration:none; font-weight:bold; padding:6px 12px;}
+    .sub-nav a.active, .sub-nav a:hover {background:#ffcc00; color:#000;}
 
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
+    /* About */
+    .about-grid {display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center;}
+    .about-grid img {width:100%; height:auto;}
 
-    /* ====== Layout Helpers ====== */
-    .container { width: min(1200px, 92%); margin-inline: auto; }
-    .grid { display: grid; gap: 1rem; }
-    .grid-2 { grid-template-columns: repeat(2, 1fr); }
-    .grid-3 { grid-template-columns: repeat(3, 1fr); }
-    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    /* Mission / Vision / Values */
+    .cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:30px;}
+    .card {background:#f4f4f4; padding:20px; border:2px solid #ccc; transition:0.3s;}
+    .card:hover {border-color:#003366;}
 
-    @media (max-width: 1024px){ .grid-4{ grid-template-columns: repeat(2, 1fr);} }
-    @media (max-width: 780px){ .grid-3{ grid-template-columns: 1fr;} .grid-2{ grid-template-columns: 1fr;} }
+    /* Counters */
+    .facts {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:20px; text-align:center; margin-top:40px;}
+    .fact {font-size:2rem; font-weight:bold; color:#003366;}
 
-    /* ====== Square Cards (no rounded corners) ====== */
-    .card { background: var(--card); border: 1px solid var(--border); box-shadow: 0 6px 14px rgba(0,0,0,0.06); padding: 1.25rem; border-radius: 0; }
-    .card:hover { box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
+    /* History */
+    .timeline {border-left:3px solid #003366; margin-left:20px; padding-left:20px;}
+    .timeline-item {margin-bottom:20px; position:relative;}
+    .timeline-item::before {content:""; position:absolute; left:-13px; top:5px; width:20px; height:20px; background:#003366; border-radius:50%;}
+    .accordion {margin-top:20px;}
+    .accordion button {width:100%; text-align:left; padding:10px; font-weight:bold; border:none; background:#eee; cursor:pointer;}
+    .accordion button.active {background:#003366; color:#fff;}
+    .accordion .panel {max-height:0; overflow:hidden; transition:0.4s ease; background:#f9f9f9; padding:0 10px;}
 
-    /* ====== Sticky Subnav (About / History) – stays below your existing header ====== */
-    .subnav { position: sticky; top: 0; z-index: 40; background: #fff; border-bottom: 1px solid var(--border); }
-    .subnav .container { display: flex; gap: .5rem; align-items: center; }
-    .pill { padding: .6rem .9rem; border: 1px solid var(--border); text-transform: uppercase; font-size: .82rem; letter-spacing: .04em; }
-    .pill.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+    /* Leadership */
+    .leaders {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:30px;}
+    .leader {border:2px solid #ccc; padding:20px; background:#fff; text-align:center;}
+    .leader img {width:100%; height:auto; border:2px solid #003366;}
+    .leader h3 {margin:10px 0;}
 
-    /* ====== Section Headings ====== */
-    .section { padding: 2.2rem 0; }
-    .section h2 { font-size: clamp(1.3rem, 2.5vw, 2rem); margin: 0 0 .6rem; }
-    .section p.lead { color: var(--muted); margin: 0 0 1rem; }
+    /* FAQ */
+    .faq .accordion button {background:#003366; color:#fff;}
+    .faq .accordion .panel {background:#eee;}
 
-    /* ====== Hero Ribbon (optional, sits below existing header) ====== */
-    .ribbon { background: linear-gradient(90deg, #eef3ff, #fffaf0); border-block: 1px solid var(--border); }
-    .breadcrumb { font-size: .9rem; color: var(--muted); }
-
-    /* ====== About: Mission / Vision / Values ====== */
-    .kpi { display: grid; grid-template-columns: 56px 1fr; gap: .75rem; align-items: start; }
-    .kpi .icon { width: 56px; height:56px; border:1px solid var(--border); display:grid; place-items:center; font-weight: 700; }
-    .list { margin: .5rem 0 0 1rem; padding: 0; }
-    .list li { margin: .35rem 0; }
-
-    /* ====== Counters ====== */
-    .facts { background: var(--surface); border:1px solid var(--border); }
-    .fact { text-align: center; padding: 1.2rem 1rem; border-right: 1px solid var(--border); }
-    .fact:last-child { border-right: 0; }
-    .fact .num { font-size: clamp(1.4rem, 4vw, 2.2rem); font-weight: 800; letter-spacing: .02em; }
-    .fact .lbl { color: var(--muted); font-size: .92rem; }
-    @media (max-width: 780px){ .fact{ border-right: 0; border-bottom: 1px solid var(--border);} .fact:last-child{ border-bottom: 0;} }
-
-    /* ====== History Timeline ====== */
-    .timeline { position: relative; padding-left: 1.2rem; }
-    .timeline::before { content: ""; position: absolute; left: .4rem; top: 0; bottom: 0; width: 2px; background: var(--border); }
-    .t-item { position: relative; padding-left: 1rem; margin-bottom: 1rem; }
-    .t-item::before { content: ""; position: absolute; left: -0.2rem; top: .25rem; width: .8rem; height: .8rem; border: 2px solid var(--brand); background: #fff; }
-    .t-year { font-weight: 800; color: var(--brand); }
-    .t-body { color: #334155; }
-
-    /* ====== Accordions ====== */
-    .accordion { border: 1px solid var(--border); }
-    .acc-item + .acc-item { border-top: 1px solid var(--border); }
-    .acc-btn { width: 100%; text-align: left; padding: 1rem; background: #fff; border: 0; font-size: 1rem; display:flex; justify-content: space-between; align-items: center; cursor: pointer; }
-    .acc-panel { max-height: 0; overflow: hidden; transition: max-height .3s ease; border-top: 1px dashed var(--border); padding: 0 1rem; }
-    .acc-item.open .acc-panel { padding: 1rem; }
-
-    /* ====== Leadership Cards ====== */
-    .leader-card .role { color: var(--muted); font-size: .92rem; }
-    .leader-msg { background: var(--surface); border: 1px dashed var(--border); padding: .75rem; margin-top: .75rem; }
-
-    /* ====== Gallery (Lightbox) ====== */
-    .gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
-    @media (max-width: 1024px){ .gallery{ grid-template-columns: repeat(3, 1fr);} }
-    @media (max-width: 680px){ .gallery{ grid-template-columns: repeat(2, 1fr);} }
-    .gallery a { border: 1px solid var(--border); display:block; }
+    /* Gallery */
+    .gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:10px; margin-top:30px;}
+    .gallery img {width:100%; cursor:pointer; border:2px solid #ccc;}
 
     /* Lightbox */
-    .lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.85); display:none; place-items:center; z-index: 90; }
-    .lightbox.open { display: grid; }
-    .lightbox img { max-width: 92vw; max-height: 82vh; border: 6px solid #fff; }
-    .lightbox .close { position: absolute; top: 12px; right: 12px; background:#fff; border:1px solid var(--border); padding:.4rem .6rem; cursor:pointer; }
+    .lightbox {display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center;}
+    .lightbox img {max-width:90%; max-height:80%;}
+    .lightbox span {position:absolute; top:20px; right:30px; font-size:2rem; color:#fff; cursor:pointer;}
 
-    /* ====== CTA ====== */
-    .cta { background: #0b1220; color: #fff; }
-    .cta .btn { background: #fff; color: #0b1220; padding: .8rem 1rem; border: 2px solid #fff; display:inline-block; font-weight:700; }
-    .btn-inline { display:inline-flex; gap:.6rem; align-items:center; }
-
-    /* Utility */
-    .muted{ color: var(--muted); }
-    .hide-mobile{ display: block; }
-    @media (max-width: 680px){ .hide-mobile{ display:none; }}
+    /* CTA */
+    .cta {background:#003366; color:#fff; text-align:center; padding:50px 20px;}
+    .cta a {display:inline-block; margin-top:20px; padding:10px 20px; background:#ffcc00; color:#000; text-decoration:none; font-weight:bold;}
   </style>
 </head>
 <body>
-  <!-- Header with Banner -->
-<link rel="stylesheet" href="css/style.css">
 
-<body>
+  <!-- Keep your existing HEADER here -->
+  <header>
+    <!-- YOUR about.html HEADER CONTENT -->
+  </header>
 
-<!-- Header with Banner -->
-<header>
-  <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="management.html">Management</a></li>
-      <li><a href="faculty.html">Faculty</a></li>
-      <li><a href="Courses.html">Courses</a></li>
-      <li><a href="Notice board.html">Notice Board</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Admission.html">Admission</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-    </ul>
-  </nav>
-</header>
-  <!-- Optional ribbon/breadcrumb directly under your existing header (safe to keep/remove) -->
-  <div class="ribbon">
-    <div class="container" style="padding: .8rem 0; display:flex; justify-content:space-between; align-items:center; gap:.75rem; flex-wrap: wrap;">
-      <div class="breadcrumb">Home ▸ About</div>
-      <div class="muted hide-mobile">Academic excellence • Discipline • Defence Academy Focus</div>
-    </div>
-  </div>
-
-  <!-- Sticky subnav to jump between About & History blocks -->
-  <nav class="subnav">
-    <div class="container" style="padding: .5rem 0;">
-      <a class="pill active" href="#about" data-pill>About College</a>
-      <a class="pill" href="#history" data-pill>History</a>
-      <span style="flex:1"></span>
-      <a class="pill" href="#faq" data-pill>FAQ</a>
-      <a class="pill" href="#gallery" data-pill>Gallery</a>
-    </div>
+  <!-- Sub Navigation -->
+  <nav class="sub-nav">
+    <a href="#about">About</a>
+    <a href="#history">History</a>
+    <a href="#leadership">Leadership</a>
+    <a href="#faq">FAQ</a>
+    <a href="#gallery">Gallery</a>
   </nav>
 
-  <!-- ============== ABOUT SECTION ============== -->
-  <section id="about" class="section">
-    <div class="container grid grid-2" style="align-items:start;">
-      <div>
-        <h2>About Our College</h2>
-        <p class="lead">Vaagdevi Junior & Degree College, Boath is committed to delivering quality education with strong discipline and defence academy orientation.</p>
-
-        <div class="grid grid-3" style="margin-top:1rem;">
-          <div class="card kpi">
-            <div class="icon">MV</div>
-            <div>
-              <strong>Mission</strong>
-              <ul class="list">
-                <li>Provide holistic education and skills.</li>
-                <li>Promote values, discipline and service.</li>
-                <li>Enable competitive exam readiness.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card kpi">
-            <div class="icon">VS</div>
-            <div>
-              <strong>Vision</strong>
-              <ul class="list">
-                <li>To be a leading rural hub for junior & degree education.</li>
-                <li>Blend academics with sports, NCC/NSS & defence prep.</li>
-                <li>Empower students for higher studies & careers.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="card kpi">
-            <div class="icon">CV</div>
-            <div>
-              <strong>Core Values</strong>
-              <ul class="list">
-                <li>Integrity & discipline</li>
-                <li>Excellence & inclusion</li>
-                <li>Service & leadership</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:1rem;">
-          <strong>Highlights</strong>
-          <ul class="list">
-            <li>Junior: MPC, BiPC, CEC | Degree: B.Sc, B.Com (examples – edit as needed)</li>
-            <li>Experienced faculty with mentoring & remedial classes</li>
-            <li>Defence Academy drills • Sports • Cultural clubs • NSS</li>
-            <li>Scholarships & merit awards for high achievers</li>
-          </ul>
-        </div>
-      </div>
-
-      <div>
-        <div class="card facts grid grid-4">
-          <div class="fact">
-            <div class="num" data-counter="1200">0</div>
-            <div class="lbl">Alumni</div>
-          </div>
-          <div class="fact">
-            <div class="num" data-counter="45">0</div>
-            <div class="lbl">Faculty</div>
-          </div>
-          <div class="fact">
-            <div class="num" data-counter="18">0</div>
-            <div class="lbl">Years</div>
-          </div>
-          <div class="fact">
-            <div class="num" data-counter="36">0</div>
-            <div class="lbl">Classrooms</div>
-          </div>
-        </div>
-
-        <div class="card" style="margin-top:1rem;">
-          <strong>Facilities</strong>
-          <ul class="list">
-            <li>Well-equipped labs • Library • Digital classrooms</li>
-            <li>Playground • Indoor games • Regular PT</li>
-            <li>Career guidance & placement support</li>
-          </ul>
-        </div>
-
-        <div class="card" style="margin-top:1rem;">
-          <strong>Contact</strong>
-          <p class="muted">Boath, Adilabad • Email & phone here • Office hours: 9:00 AM – 5:00 PM</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============== HISTORY SECTION ============== -->
-  <section id="history" class="section" style="background: var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
+  <!-- About Section -->
+  <section id="about">
     <div class="container">
-      <h2>College History</h2>
-      <p class="lead">A brief journey of Vaagdevi from inception to impact. Edit dates and events below.</p>
-
-      <div class="grid grid-2">
-        <div class="card">
-          <div class="timeline">
-            <div class="t-item">
-              <div class="t-year">2008</div>
-              <div class="t-body">Foundation laid with Junior College streams; focus on strong academics and discipline.</div>
-            </div>
-            <div class="t-item">
-              <div class="t-year">2012</div>
-              <div class="t-body">Degree College established; expansion of science and commerce programmes.</div>
-            </div>
-            <div class="t-item">
-              <div class="t-year">2017</div>
-              <div class="t-body">NSS/NCC activities scaled; sports & cultural fests introduced annually.</div>
-            </div>
-            <div class="t-item">
-              <div class="t-year">2020</div>
-              <div class="t-body">Digital classrooms & LMS support; blended learning adopted.</div>
-            </div>
-            <div class="t-item">
-              <div class="t-year">2024</div>
-              <div class="t-body">Defence Academy track strengthened with specialised coaching.</div>
-            </div>
-          </div>
+      <h2>About Our College</h2>
+      <div class="about-grid">
+        <div>
+          <p>Vaagdevi Junior & Degree College has been a center for excellence, committed to nurturing talent and creating leaders for tomorrow. With quality education, experienced faculty, and modern facilities, we prepare students for academic and personal success.</p>
         </div>
+        <img src="assets/images/campus.jpg" alt="Campus">
+      </div>
 
-        <div class="card accordion" id="hist-accordion">
-          <div class="acc-item open">
-            <button class="acc-btn" type="button">Founding Principles <span>+</span></button>
-            <div class="acc-panel">
-              Vaagdevi was started to provide accessible, quality education to rural students with a focus on values and discipline.
-            </div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-btn" type="button">Milestones & Achievements <span>+</span></button>
-            <div class="acc-panel">
-              Consistent board results, university ranks, sports medals, and active participation in community service.
-            </div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-btn" type="button">Community & Outreach <span>+</span></button>
-            <div class="acc-panel">
-              Regular NSS camps, cleanliness drives, blood donation camps, and awareness programs.
-            </div>
-          </div>
-        </div>
+      <div class="cards">
+        <div class="card"><h3>Mission</h3><p>To provide value-based education that empowers students to succeed in all walks of life.</p></div>
+        <div class="card"><h3>Vision</h3><p>To become a premier institution known for excellence in teaching, learning, and research.</p></div>
+        <div class="card"><h3>Values</h3><p>Integrity, Innovation, Inclusiveness, and Inspiration form the core of our values.</p></div>
+      </div>
+
+      <div class="facts">
+        <div><div class="fact" data-target="25">0</div><p>Years of Excellence</p></div>
+        <div><div class="fact" data-target="2000">0</div><p>Students Enrolled</p></div>
+        <div><div class="fact" data-target="150">0</div><p>Experienced Faculty</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============== LEADERSHIP ============== -->
-  <section class="section">
+  <!-- History -->
+  <section id="history">
+    <div class="container">
+      <h2>Our History</h2>
+      <div class="timeline">
+        <div class="timeline-item"><h3>1995</h3><p>College was established with a vision to provide quality education in Boath.</p></div>
+        <div class="timeline-item"><h3>2005</h3><p>Expanded with modern labs and digital classrooms.</p></div>
+        <div class="timeline-item"><h3>2020</h3><p>Became a leading institution in Adilabad District with over 2000 students.</p></div>
+      </div>
+
+      <div class="accordion">
+        <button>Early Beginnings</button>
+        <div class="panel"><p>Our journey began with a small group of dedicated educators who wanted to transform education in rural Telangana.</p></div>
+
+        <button>Growth Phase</button>
+        <div class="panel"><p>With commitment and hard work, we expanded facilities and introduced new courses.</p></div>
+
+        <button>Present & Future</button>
+        <div class="panel"><p>We continue to focus on innovation, research, and holistic development of students.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section id="leadership">
     <div class="container">
       <h2>Leadership</h2>
-      <div class="grid grid-3">
-        <div class="card leader-card">
-          <strong>Chairman Name</strong>
-          <div class="role">Chairman</div>
-          <div class="leader-msg">“Brief message from Chairman about college goals and values.”</div>
+      <div class="leaders">
+        <div class="leader">
+          <img src="assets/images/chairman.jpg" alt="Chairman">
+          <h3>Chairman</h3>
+          <p>“We believe in empowering youth with education that goes beyond textbooks.”</p>
         </div>
-        <div class="card leader-card">
-          <strong>Correspondent Name</strong>
-          <div class="role">Correspondent</div>
-          <div class="leader-msg">“Our commitment to student success through academics and discipline.”</div>
-        </div>
-        <div class="card leader-card">
-          <strong>Principal Name</strong>
-          <div class="role">Principal</div>
-          <div class="leader-msg">“Welcome to Vaagdevi. Together we learn, lead and serve.”</div>
+        <div class="leader">
+          <img src="assets/images/correspondent.jpg" alt="Correspondent">
+          <h3>Correspondent</h3>
+          <p>“Our mission is to create a nurturing environment where every student thrives.”</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============== FAQ ============== -->
-  <section id="faq" class="section" style="background: var(--surface); border-top:1px solid var(--border); border-bottom:1px solid var(--border);">
-    <div class="container">
-      <h2>FAQ</h2>
-      <div class="grid grid-2">
-        <div class="card accordion">
-          <div class="acc-item open">
-            <button class="acc-btn" type="button">What courses are offered? <span>+</span></button>
-            <div class="acc-panel">Junior: MPC, BiPC, CEC. Degree: B.Sc, B.Com, BA (update as per your offerings).</div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-btn" type="button">Admissions process <span>+</span></button>
-            <div class="acc-panel">Collect application, submit documents, counselling/merit, and final admission confirmation.</div>
-          </div>
-          <div class="acc-item">
-            <button class="acc-btn" type="button">Scholarships <span>+</span></button>
-            <div class="acc-panel">Government scholarships and college merit awards are supported. Contact office for details.</div>
-          </div>
-        </div>
-        <div class="card">
-          <strong>Why choose Vaagdevi?</strong>
-          <ul class="list">
-            <li>Strong academics with experienced faculty</li>
-            <li>Defence Academy orientation & physical training</li>
-            <li>Supportive environment and mentoring</li>
-            <li>Active extracurriculars (Sports, NSS, cultural)</li>
-          </ul>
-        </div>
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container faq">
+      <h2>Frequently Asked Questions</h2>
+      <div class="accordion">
+        <button>What courses are offered?</button>
+        <div class="panel"><p>We offer Intermediate, Degree, and specialized training programs.</p></div>
+
+        <button>Is hostel facility available?</button>
+        <div class="panel"><p>Yes, separate hostels for boys and girls with modern amenities.</p></div>
+
+        <button>How to apply?</button>
+        <div class="panel"><p>Applications are open online and offline at our campus office.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- ============== GALLERY ============== -->
-  <section id="gallery" class="section">
+  <!-- Gallery -->
+  <section id="gallery">
     <div class="container">
-      <h2>Campus Gallery</h2>
-      <p class="lead">Replace image paths with your photos in /assets/images/…</p>
+      <h2>Gallery</h2>
       <div class="gallery">
-        <a href="assets/images/campus1.jpg"><img src="assets/images/campus1.jpg" alt="Campus 1"></a>
-        <a href="assets/images/campus2.jpg"><img src="assets/images/campus2.jpg" alt="Campus 2"></a>
-        <a href="assets/images/campus3.jpg"><img src="assets/images/campus3.jpg" alt="Campus 3"></a>
-        <a href="assets/images/campus4.jpg"><img src="assets/images/campus4.jpg" alt="Campus 4"></a>
-        <a href="assets/images/campus5.jpg"><img src="assets/images/campus5.jpg" alt="Campus 5"></a>
-        <a href="assets/images/campus6.jpg"><img src="assets/images/campus6.jpg" alt="Campus 6"></a>
-        <a href="assets/images/campus7.jpg"><img src="assets/images/campus7.jpg" alt="Campus 7"></a>
-        <a href="assets/images/campus8.jpg"><img src="assets/images/campus8.jpg" alt="Campus 8"></a>
+        <img src="assets/images/gallery1.jpg" alt="Gallery Image">
+        <img src="assets/images/gallery2.jpg" alt="Gallery Image">
+        <img src="assets/images/gallery3.jpg" alt="Gallery Image">
       </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div class="lightbox" id="lightbox">
-      <button class="close" aria-label="Close">Close ✕</button>
-      <img src="" alt="Preview" />
     </div>
   </section>
 
-  <!-- ============== CTA ============== -->
-  <section class="cta section">
-    <div class="container" style="display:flex; align-items:center; justify-content: space-between; gap:1rem; flex-wrap: wrap;">
-      <div>
-        <h2 style="margin:0 0 .4rem;">Ready to join Vaagdevi?</h2>
-        <div class="muted" style="color:#c9d2fe;">Admissions are open. Contact our office for guidance.</div>
-      </div>
-      <div class="btn-inline">
-        <a class="btn" href="admission.html">Apply Now</a>
-        <a class="btn" href="contact.html">Contact</a>
-      </div>
-    </div>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="">
+  </div>
+
+  <!-- CTA -->
+  <section class="cta">
+    <h2>Join Vaagdevi Junior & Degree College</h2>
+    <p>Be part of a journey that shapes your future.</p>
+    <a href="contact.html">Contact Us</a>
   </section>
 
   <script>
-    // ====== Subnav active state on click & scroll ======
-    const pills = document.querySelectorAll('[data-pill]');
-    const sections = ['about','history','faq','gallery'].map(id => document.getElementById(id));
-    function setActiveByHash(){
-      const h = location.hash.replace('#','');
-      pills.forEach(p=>p.classList.toggle('active', p.getAttribute('href') === '#' + h));
-    }
-    window.addEventListener('hashchange', setActiveByHash);
-    setActiveByHash();
-
-    const observer = new IntersectionObserver((entries)=>{
-      entries.forEach(e=>{
-        if(e.isIntersecting){
-          const id = e.target.id;
-          pills.forEach(p=>p.classList.toggle('active', p.getAttribute('href') === '#' + id));
-        }
-      })
-    }, { rootMargin: '-40% 0px -55% 0px', threshold: 0.01 });
-    sections.forEach(s=>{ if(s) observer.observe(s); });
-
-    // ====== Animated counters ======
-    const counters = document.querySelectorAll('[data-counter]');
-    const counterObs = new IntersectionObserver((entries)=>{
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          const el = entry.target;
-          const target = +el.getAttribute('data-counter');
-          let start = 0; const duration = 900; const startTime = performance.now();
-          function animate(t){
-            const p = Math.min((t - startTime)/duration, 1);
-            const val = Math.floor(start + (target - start)*p);
-            el.textContent = val.toLocaleString();
-            if(p < 1) requestAnimationFrame(animate);
-          }
-          requestAnimationFrame(animate);
-          counterObs.unobserve(el);
-        }
+    // Sub Nav Highlight
+    const sections=document.querySelectorAll("section");
+    const navLinks=document.querySelectorAll(".sub-nav a");
+    window.addEventListener("scroll",()=>{
+      let current="";
+      sections.forEach(sec=>{
+        const top=window.scrollY;
+        const offset=sec.offsetTop-100;
+        if(top>=offset) current=sec.getAttribute("id");
       });
-    }, { threshold: 0.5 });
-    counters.forEach(c=>counterObs.observe(c));
-
-    // ====== Accordion ======
-    document.querySelectorAll('.accordion .acc-btn').forEach(btn=>{
-      btn.addEventListener('click', ()=>{
-        const item = btn.closest('.acc-item');
-        const panel = item.querySelector('.acc-panel');
-        const isOpen = item.classList.contains('open');
-        if(isOpen){ item.classList.remove('open'); panel.style.maxHeight = 0; }
-        else {
-          item.classList.add('open');
-          panel.style.maxHeight = panel.scrollHeight + 'px';
-        }
-      })
+      navLinks.forEach(link=>{
+        link.classList.remove("active");
+        if(link.getAttribute("href").includes(current)) link.classList.add("active");
+      });
     });
-    // Initialize open states
-    document.querySelectorAll('.acc-item.open .acc-panel').forEach(p=> p.style.maxHeight = p.scrollHeight + 'px');
 
-    // ====== Lightbox Gallery ======
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = lightbox.querySelector('img');
-    document.querySelectorAll('.gallery a').forEach(a=>{
-      a.addEventListener('click', (e)=>{
-        e.preventDefault();
-        lightboxImg.src = a.getAttribute('href');
-        lightbox.classList.add('open');
-      })
+    // Accordion
+    document.querySelectorAll(".accordion button").forEach(btn=>{
+      btn.addEventListener("click",()=>{
+        btn.classList.toggle("active");
+        const panel=btn.nextElementSibling;
+        panel.style.maxHeight?panel.style.maxHeight=null:panel.style.maxHeight=panel.scrollHeight+"px";
+      });
     });
-    lightbox.addEventListener('click', (e)=>{
-      if(e.target.classList.contains('close') || e.target === lightbox){
-        lightbox.classList.remove('open');
-        lightboxImg.src = '';
+
+    // Counters
+    const counters=document.querySelectorAll(".fact");
+    let started=false;
+    window.addEventListener("scroll",()=>{
+      const trigger=document.querySelector(".facts").offsetTop-window.innerHeight;
+      if(!started && window.scrollY>trigger){
+        counters.forEach(counter=>{
+          const update=()=>{
+            const target=+counter.getAttribute("data-target");
+            const count=+counter.innerText;
+            const inc=target/100;
+            if(count<target){
+              counter.innerText=Math.ceil(count+inc);
+              setTimeout(update,20);
+            } else counter.innerText=target;
+          };
+          update();
+        });
+        started=true;
       }
     });
-  </script>
 
-  <!-- ===================== KEEP YOUR EXISTING FOOTER IF ANY ===================== -->
+    // Gallery Lightbox
+    const gallery=document.querySelectorAll(".gallery img");
+    const lightbox=document.getElementById("lightbox");
+    const lightboxImg=document.getElementById("lightbox-img");
+    gallery.forEach(img=>{
+      img.addEventListener("click",()=>{
+        lightbox.style.display="flex";
+        lightboxImg.src=img.src;
+      });
+    });
+    function closeLightbox(){lightbox.style.display="none";}
+  </script>
 </body>
 </html>
-
-
