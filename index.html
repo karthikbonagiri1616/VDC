@@ -201,6 +201,24 @@
 </section>
 
 <style>
+<!-- Notice Board Strip -->
+<section id="news-strip">
+  <div class="news-container">
+    <h2>Notice Board:</h2>
+    <div class="news-ticker">
+      <ul>
+        <li><span class="tag notice">Notice</span> Admissions open for 2025 – Apply Now!</li>
+        <li><span class="tag event">Event</span> NSS Camp scheduled on 5th Sept at Boath Village.</li>
+        <li><span class="tag update">Update</span> New computer lab inaugurated for degree students.</li>
+        <li><span class="tag alert">Alert</span> Mid-term exams begin from 10th September.</li>
+        <li><span class="tag success">Success</span> 15 students selected for Indian Army this year.</li>
+      </ul>
+    </div>
+    <a href="Notice board.html" class="view-all">View All →</a>
+  </div>
+</section>
+
+<style>
 /* Notice Strip */
 #news-strip {
   background: #f1f5ff;
@@ -251,6 +269,21 @@
   animation-play-state: paused;
 }
 
+/* Tags */
+.tag {
+  padding: 2px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-right: 8px;
+  color: #fff;
+  font-weight: bold;
+}
+.tag.notice { background: #d9534f; }     /* red */
+.tag.event { background: #5bc0de; }      /* blue */
+.tag.update { background: #5cb85c; }     /* green */
+.tag.alert { background: #f0ad4e; }      /* orange */
+.tag.success { background: #337ab7; }    /* navy */
+
 .view-all {
   background: var(--accent);
   color: #000;
@@ -272,6 +305,7 @@
   100% { transform: translateX(-100%); }
 }
 </style>
+
 
   <!-- Hero -->
   <section class="hero"></section>
@@ -354,4 +388,5 @@
 
 </body>
 </html>
+
 
