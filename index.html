@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vaagdevi Junior & Degree College, Boath</title>
   <style>
     :root {
@@ -17,57 +17,13 @@
     h1,h2,h3{margin-bottom:15px;font-weight:700;}
     .container{max-width:1200px;margin:auto;padding:50px 20px;}
 
-    /* Navbar */
+    /* Header */
+    header img.banner{width:100%;height:250px;object-fit:cover;display:block;}
     .navbar{background:var(--primary);}
     .navbar ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;}
     .navbar li{margin:0;}
     .navbar a{display:block;padding:12px 18px;color:#fff;text-decoration:none;transition:.3s;}
     .navbar a:hover,.navbar .active{background:var(--accent);color:#000;}
-
-    /* Banner with overlay text */
-    .banner-section {
-      position: relative;
-      width: 100%;
-      height: 400px;
-      overflow: hidden;
-    }
-    .banner-section img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    .banner-text {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: #fff;
-      background: rgba(0,0,0,0.5);
-      padding: 20px 30px;
-      border-radius: 8px;
-    }
-    .banner-text h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-    .banner-text p {
-      font-size: 18px;
-      margin-bottom: 15px;
-    }
-    .banner-text a {
-      background: var(--accent);
-      color: #000;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
-    .banner-text a:hover {
-      background: #fff;
-      color: var(--primary);
-    }
 
     /* About */
     section{margin-bottom:60px;}
@@ -100,31 +56,24 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar">
-  <ul>
-    <li><a href="index.html" class="active">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="management.html">Management</a></li>
-    <li><a href="faculty.html">Faculty</a></li>
-    <li><a href="Courses.html">Courses</a></li>
-    <li><a href="Notice board.html">Notice Board</a></li>
-    <li><a href="nss.html">NSS</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
-    <li><a href="Admission.html">Admission</a></li>
-    <li><a href="Contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<!-- Banner with overlay text -->
-<section class="banner-section">
-  <img src="assets/img/d.jpg" alt="Vaagdevi College Banner">
-  <div class="banner-text">
-    <h1>Welcome to Vaagdevi Junior & Degree College</h1>
-    <p>Excellence in Education, Discipline, and Defence Training since 2005</p>
-    <a href="about.html">Read More</a>
-  </div>
-</section>
+<!-- Header (same as about page) -->
+<header>
+  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="management.html">Management</a></li>
+      <li><a href="faculty.html">Faculty</a></li>
+      <li><a href="Courses.html">Courses</a></li>
+      <li><a href="Notice board.html">Notice Board</a></li>
+      <li><a href="nss.html">NSS</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="Admission.html">Admission</a></li>
+      <li><a href="Contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
 
 <!-- About -->
 <section id="about" class="container">
@@ -185,4 +134,3 @@
 
 </body>
 </html>
-
