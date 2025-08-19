@@ -232,63 +232,64 @@
 </section>
 
 <style>
-<!-- Notice Board Section -->
+<!-- Notice Board -->
 <section class="notice-board">
-  <h2>📢 Notice Board</h2>
-  <div class="ticker">
-    <ul>
-      <li>📌 Admissions are open for 2025-26 academic year!</li>
-      <li>📌 NCC training sessions start from 1st September.</li>
-      <li>📌 College Cultural Fest scheduled on 15th October.</li>
-      <li>📌 Online classes available for Defence Coaching.</li>
-      <li>📌 Hostel facility is now open for new students.</li>
-    </ul>
+  <div class="container">
+    <h2>Latest Notices</h2>
+    <div class="ticker">
+      <ul>
+        <li>📢 Admissions Open for 2025-26 – Apply Now!</li>
+        <li>🎉 NSS Special Camp scheduled from Sept 15</li>
+        <li>🏆 Students won 1st Prize in District Sports Meet</li>
+        <li>📘 New Library Books Available from This Month</li>
+        <li>🎓 Guest Lecture on Defence Careers this Sunday</li>
+        <li>💻 Computer Lab upgraded with new systems</li>
+        <li>🍽️ Hostel facility now available for Degree students</li>
+      </ul>
+    </div>
   </div>
 </section>
 
 <style>
 /* Notice Board */
 .notice-board {
-  background: var(--light);
+  background: #f9f9f9;
   padding: 40px 20px;
-  text-align: center;
-  margin: 40px auto;
-  max-width: 1000px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border-top: 4px solid var(--accent);
+  border-bottom: 4px solid var(--accent);
 }
 .notice-board h2 {
-  margin-bottom: 15px;
+  text-align: center;
+  margin-bottom: 20px;
   color: var(--primary);
 }
 .ticker {
   overflow: hidden;
-  height: 40px;
+  height: 150px; /* show ~5 notices */
   position: relative;
 }
 .ticker ul {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   position: absolute;
-  animation: tickerScroll 12s linear infinite;
+  animation: tickerScroll 15s linear infinite;
 }
 .ticker li {
-  height: 40px;
-  line-height: 40px;
-  font-size: 1rem;
+  font-size: 1.05rem;
+  padding: 8px 15px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
   color: #333;
-  font-weight: 600;
 }
+
+/* Scroll Animation */
 @keyframes tickerScroll {
   0% { top: 0; }
-  20% { top: -40px; }
-  40% { top: -80px; }
-  60% { top: -120px; }
-  80% { top: -160px; }
-  100% { top: 0; }
+  100% { top: -100%; }
 }
 </style>
+
 
 </style>
 
@@ -375,6 +376,7 @@
 
 </body>
 </html>
+
 
 
 
