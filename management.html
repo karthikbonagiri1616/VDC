@@ -7,13 +7,43 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
 
-     /* Header */
-    header img.banner{width:100%;display:block;}
-    .navbar{background:var(--primary);}
-    .navbar ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;}
-    .navbar li{margin:0;}
-    .navbar a{display:block;padding:12px 18px;color:#fff;transition:.3s;}
-    .navbar a:hover,.navbar .active{background:var(--accent);color:#000;}
+  /* Header Banner */
+header img.banner {
+  width: 100%;
+  display: block;
+}
+
+/* Navbar */
+.navbar {
+  background: #0a2a66; /* same as About page */
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0;
+}
+
+.navbar a {
+  display: block;
+  padding: 12px 18px;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar .active {
+  background: #f9b800; /* Accent */
+  color: #000;
+}
 
 
    /* Management Section */
@@ -96,10 +126,11 @@
 
 <!-- Header with Banner (same as index.html) -->
 <!-- Header with Banner -->
+<!-- Header (same as About page) -->
 <header>
-  <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
-<nav class="navbar">
-         <ul>
+  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
+  <nav class="navbar">
+    <ul>
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="management.html">Management</a></li>
@@ -247,6 +278,7 @@ toggle.addEventListener('click', () => {
 
 </body>
 </html>
+
 
 
 
