@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<!-- Header (keep as you gave me) -->
+<!-- Header -->
 <header>
   <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
   <nav class="navbar">
@@ -27,54 +27,84 @@
   </nav>
 </header>
 
-<!-- Hero -->
-<section class="hero">
-  <div>
+<!-- Hero Section -->
+<section class="hero-sub">
+  <div class="hero-text">
     <h1>About Us</h1>
-    <p>Shaping Leaders. Building Futures. Serving the Nation.</p>
+    <p>Empowering Students • Serving the Nation • Building Leaders</p>
   </div>
 </section>
 
-<!-- About -->
+<!-- About Section -->
 <section id="about" class="container grid">
-  <div>
+  <div class="fade-in">
     <h2>Who We Are</h2>
-    <p><strong>Vaagdevi Defence Academy</strong> is among the top academies with expert faculty, 
-    study material, and personalized guidance to help students succeed.</p>
-    <p>We provide a learning environment that brings out the best in every student, 
-    instilling values, confidence, and excellence through modern teaching methods.</p>
+    <p><strong>Vaagdevi Defence Academy</strong> is the top institute preparing future leaders for Defence & Professional careers. 
+    With expert faculty, curated study material, and personalized mentoring, we ensure student success.</p>
+    <p>We provide a learning environment where values meet academics, supported by modern facilities, sports, and co-curriculars. 
+    Our vision is to inspire confidence, discipline, and a passion for excellence in every student.</p>
   </div>
-  <img src="assets/img/College.jpg" alt="About Vaagdevi College">
+  <div class="fade-in">
+    <img src="assets/img/about.jpg" alt="About Vaagdevi College" class="about-img">
+  </div>
 </section>
 
-<!-- History -->
+<!-- History Section -->
 <section id="history" class="container">
   <h2>Our History</h2>
   <div class="timeline">
-    <div><span>2005</span> Established as the first Junior & Degree College in Boath constituency.</div>
-    <div><span>2005–2015</span> Expanded programs, producing graduates excelling in Defence, Engineering, Arts, and Commerce.</div>
-    <div><span>2015–Present</span> Modernized with digital classes, strong infrastructure (5 acres campus), and Defence coaching.</div>
+    <div class="timeline-item fade-in">
+      <div class="circle"></div>
+      <div class="content">
+        <h3>2005</h3>
+        <p>Founded as the first Junior & Degree College in Boath constituency to provide higher education opportunities.</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="circle"></div>
+      <div class="content">
+        <h3>2005–2015</h3>
+        <p>Expanded programs, producing graduates in Engineering, Defence, Arts, Commerce, and Education.</p>
+      </div>
+    </div>
+    <div class="timeline-item fade-in">
+      <div class="circle"></div>
+      <div class="content">
+        <h3>2015–Present</h3>
+        <p>Introduced motivational & digital classes, built a 5-acre campus, and launched Defence coaching programs.</p>
+      </div>
+    </div>
   </div>
 </section>
 
-<!-- Services -->
+<!-- Services Section -->
 <section id="services" class="container">
   <h2>Our Services</h2>
-  <div class="grid services">
-    <div>📘 Study Material</div>
-    <div>🎤 Seminars</div>
-    <div>🏫 Classroom Teaching</div>
-    <div>👨‍🏫 Guest Lectures</div>
-    <div>📝 Testing & Evaluation</div>
-    <div>💪 Physical Training</div>
-    <div>⚖️ Discipline</div>
-    <div>👩‍🏫 Experienced Faculty</div>
-    <div>💻 Computer Lab</div>
-    <div>⚽ Ground Facility</div>
-    <div>🍽️ Hostel & Food</div>
+  <div class="services-grid">
+    <div class="service-card fade-in"><span>📘</span><h3>Study Material</h3></div>
+    <div class="service-card fade-in"><span>🎤</span><h3>Seminars</h3></div>
+    <div class="service-card fade-in"><span>🏫</span><h3>Classroom Teaching</h3></div>
+    <div class="service-card fade-in"><span>👨‍🏫</span><h3>Guest Lectures</h3></div>
+    <div class="service-card fade-in"><span>📝</span><h3>Testing & Evaluation</h3></div>
+    <div class="service-card fade-in"><span>💪</span><h3>Physical Training</h3></div>
+    <div class="service-card fade-in"><span>⚖️</span><h3>Discipline</h3></div>
+    <div class="service-card fade-in"><span>👩‍🏫</span><h3>Experienced Faculty</h3></div>
+    <div class="service-card fade-in"><span>💻</span><h3>Computer Lab</h3></div>
+    <div class="service-card fade-in"><span>⚽</span><h3>Ground Facility</h3></div>
+    <div class="service-card fade-in"><span>🍽️</span><h3>Hostel & Food</h3></div>
   </div>
 </section>
+
+<script>
+  // Fade-in animation on scroll
+  const faders = document.querySelectorAll('.fade-in');
+  const appear = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add('visible'); }
+    });
+  });
+  faders.forEach(f=>appear.observe(f));
+</script>
 
 </body>
 </html>
-
