@@ -3,14 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About - Vaagdevi Junior & Degree College</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>About - Vaagdevi Defence Academy</title>
+  <style>
+    :root {
+      --primary: #0a2a66;
+      --accent: #f9b800;
+      --light: #f4f6fa;
+      --dark: #222;
+    }
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Segoe UI', sans-serif; line-height:1.6; color:var(--dark);}
+    a {text-decoration:none;}
+    h1,h2,h3 {margin-bottom:15px; font-weight:700;}
+    img {max-width:100%; border-radius:10px;}
+    .container {max-width:1200px; margin:auto; padding:50px 20px;}
+
+    /* Header */
+    .banner {width:100%;}
+    .navbar {background:var(--primary);}
+    .navbar ul {list-style:none; display:flex; flex-wrap:wrap; justify-content:center;}
+    .navbar li {margin:0;}
+    .navbar a {display:block; padding:12px 18px; color:#fff; transition:.3s;}
+    .navbar a:hover, .navbar .active {background:var(--accent); color:#000;}
+
+    /* Hero */
+    .hero {background:url('assets/img/about-banner.jpg') center/cover no-repeat; position:relative; padding:140px 20px; color:#fff; text-align:center;}
+    .hero::after {content:""; position:absolute; inset:0; background:rgba(0,0,0,.55);}
+    .hero-content {position:relative; z-index:1;}
+    .hero h1 {font-size:48px;}
+    .hero p {font-size:20px; margin-top:10px;}
+
+    /* About */
+    #about {display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
+    #about p {margin-bottom:15px;}
+    @media(max-width:768px){#about{grid-template-columns:1fr;}}
+
+    /* History */
+    .timeline {border-left:4px solid var(--primary); margin-top:30px; padding-left:30px;}
+    .timeline-item {margin-bottom:25px; position:relative;}
+    .timeline-item::before {content:""; width:16px; height:16px; border-radius:50%; background:var(--accent); position:absolute; left:-38px; top:4px;}
+    .timeline-item h3 {color:var(--primary); margin-bottom:5px;}
+
+    /* Services */
+    #services .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px;}
+    .card {background:var(--light); padding:25px; border-radius:12px; text-align:center; border:2px solid #eee; transition:.3s;}
+    .card:hover {transform:translateY(-6px); background:var(--primary); color:#fff;}
+    .card span {font-size:36px; display:block; margin-bottom:10px;}
+
+    /* Footer */
+    footer {background:var(--primary); color:#fff; padding:40px 20px; margin-top:50px;}
+    footer .grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:30px;}
+    footer h3 {margin-bottom:15px;}
+    footer a {color:#fff; display:block; margin-bottom:8px; transition:.3s;}
+    footer a:hover {color:var(--accent);}
+    footer p {font-size:14px;}
+  </style>
 </head>
 <body>
 
-<!-- Header (unchanged) -->
+<!-- Header -->
 <header>
-  <img src="assets/img/d.jpg" alt="College Banner" class="banner"><br>
+  <img src="assets/img/d.jpg" alt="College Banner" class="banner">
   <nav class="navbar">
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -27,105 +80,82 @@
   </nav>
 </header>
 
-<!-- Hero Section -->
-<section class="hero-sub">
-  <div class="hero-text">
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-content">
     <h1>About Us</h1>
-    <p>Shaping Leaders. Building Futures. Serving the Nation.</p>
+    <p>Empowering Students • Building Leaders • Serving the Nation</p>
   </div>
 </section>
 
-<!-- About Section -->
-<section id="about">
-  <div class="container about-grid">
-    <div class="about-content">
-      <h2>Who We Are</h2>
-      <p><strong>Vaagdevi Defence Academy</strong> is one of the top defence academies with expert faculty, 
-      comprehensive study material, and personalized guidance to help students succeed.</p>
-      <p>We provide a learning environment that brings out the best in every student. 
-      Our dedicated faculty ensures academic excellence, instills strong values, and makes learning rewarding.</p>
-      <p>Through individual attention, co-curricular activities, and modern teaching methods, 
-      we empower students with the knowledge, skills, and confidence to achieve their goals.</p>
-    </div>
-    <div class="about-img">
-      <img src="assets/img/about.jpg" alt="About Vaagdevi College">
-    </div>
+<!-- About -->
+<section id="about" class="container">
+  <div>
+    <h2>Who We Are</h2>
+    <p>Vaagdevi Defence Academy is among the top institutes with expert faculty, study materials, and personalized mentoring to ensure success.</p>
+    <p>We nurture every student’s unique abilities, instilling confidence, values, and excellence. Our approach blends academics with sports, digital learning, and holistic development.</p>
+    <p>Every student gets individual attention to identify strengths and overcome challenges, preparing them for Defence and other competitive exams.</p>
+  </div>
+  <div>
+    <img src="assets/img/about.jpg" alt="About Vaagdevi Defence Academy">
   </div>
 </section>
 
-<!-- History Section -->
-<section id="history">
-  <div class="container">
-    <h2>Our History</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <span class="year">2005</span>
-        <p>Established as the first Junior & Degree College in Boath constituency, fulfilling the need for higher education in the region.</p>
-      </div>
-      <div class="timeline-item">
-        <span class="year">2005–2015</span>
-        <p>Expanded academic programs, serving rural students and producing graduates excelling in Engineering, Defence, Arts, Commerce, and Education.</p>
-      </div>
-      <div class="timeline-item">
-        <span class="year">2015–Present</span>
-        <p>Introduced motivational and digital classes, developed strong infrastructure (5 acres campus), and expanded into Defence coaching.</p>
-      </div>
+<!-- History -->
+<section id="history" class="container">
+  <h2>Our History</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>2005</h3>
+      <p>Established as the first Junior & Degree College in Boath constituency.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>2005–2015</h3>
+      <p>Expanded programs and produced graduates excelling in Defence, Engineering, Arts, and Commerce.</p>
+    </div>
+    <div class="timeline-item">
+      <h3>2015–Present</h3>
+      <p>Modern infrastructure, digital classes, and Defence coaching programs.</p>
     </div>
   </div>
 </section>
 
-<!-- Services Section -->
-<section id="services">
-  <div class="container">
-    <h2>Our Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <span class="icon">📘</span>
-        <h3>Study Material</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">🎤</span>
-        <h3>Seminars</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">🏫</span>
-        <h3>Classroom Teaching</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">👨‍🏫</span>
-        <h3>Guest Lectures</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">📝</span>
-        <h3>Testing & Evaluation</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">💪</span>
-        <h3>Physical Training</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">⚖️</span>
-        <h3>Discipline</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">👩‍🏫</span>
-        <h3>Experienced Faculty</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">💻</span>
-        <h3>Computer Lab</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">⚽</span>
-        <h3>Ground Facility</h3>
-      </div>
-      <div class="service-card">
-        <span class="icon">🍽️</span>
-        <h3>Hostel & Food</h3>
-      </div>
-    </div>
+<!-- Services -->
+<section id="services" class="container">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="card"><span>📘</span><h3>Study Material</h3></div>
+    <div class="card"><span>💪</span><h3>Physical Training</h3></div>
+    <div class="card"><span>👨‍🏫</span><h3>Guest Lectures</h3></div>
+    <div class="card"><span>📝</span><h3>Testing & Evaluation</h3></div>
+    <div class="card"><span>💻</span><h3>Computer Lab</h3></div>
+    <div class="card"><span>🍽️</span><h3>Hostel & Food</h3></div>
   </div>
 </section>
+
+<!-- Footer -->
+<footer>
+  <div class="grid">
+    <div>
+      <h3>About</h3>
+      <p>Vaagdevi Defence Academy is committed to academic excellence, leadership, and nation-building through Defence coaching and higher education.</p>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="Courses.html">Courses</a>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p>📍 Boath, Telangana</p>
+      <p>📞 +91-XXXXXXXXXX</p>
+      <p>✉️ info@vaagdevi.edu</p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:20px;">© 2025 Vaagdevi Defence Academy. All Rights Reserved.</p>
+</footer>
 
 </body>
 </html>
