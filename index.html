@@ -152,21 +152,71 @@
     </div>
   </section>
 
-  <!-- Notice Board (Latest Updates) -->
-  <section class="container">
-    <h2>Latest News & Updates</h2>
-    <div class="news">
-      <ul>
-        <li><span>📢</span><a href="Notice board.html">Admissions Open for 2025-26 Academic Year</a></li>
-        <li><span>📢</span><a href="Notice board.html">NSS Special Camp Scheduled from 10th Sep</a></li>
-        <li><span>📢</span><a href="Notice board.html">College Annual Day Celebrations – March 15</a></li>
-        <li><span>📢</span><a href="Notice board.html">New Defence Academy Batch Starting Soon</a></li>
-      </ul>
-    </div>
-    <div style="text-align:center;margin-top:20px;">
-      <a href="Notice board.html" class="btn">View All Notices</a>
-    </div>
-  </section>
+  <!-- Notice Board (Latest Updates with Scrolling Ticker) -->
+<section class="container">
+  <h2>Latest News & Updates</h2>
+  <div class="news-ticker">
+    <ul>
+      <li><span>📢</span><a href="Notice board.html">Admissions Open for 2025-26 Academic Year</a></li>
+      <li><span>📢</span><a href="Notice board.html">NSS Special Camp Scheduled from 10th Sep</a></li>
+      <li><span>📢</span><a href="Notice board.html">College Annual Day Celebrations – March 15</a></li>
+      <li><span>📢</span><a href="Notice board.html">New Defence Academy Batch Starting Soon</a></li>
+    </ul>
+  </div>
+  <div style="text-align:center;margin-top:20px;">
+    <a href="Notice board.html" class="btn">View All Notices</a>
+  </div>
+</section>
+
+<style>
+/* Notice Board Ticker */
+.news-ticker {
+  background: var(--light);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  height: 50px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.news-ticker ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  animation: scrollNews 12s linear infinite;
+}
+
+.news-ticker li {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  background: #fff;
+}
+
+.news-ticker li span {
+  margin-right: 10px;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+.news-ticker li a {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+@keyframes scrollNews {
+  0%   { top: 0; }
+  25%  { top: -50px; }
+  50%  { top: -100px; }
+  75%  { top: -150px; }
+  100% { top: 0; }
+}
+</style>
+
 
   <!-- Call to Action -->
   <section class="cta">
@@ -188,3 +238,4 @@
 
 </body>
 </html>
+
