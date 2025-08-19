@@ -494,9 +494,17 @@
       <a href="Contact.html">Contact</a>
     </p>
   </footer>
+<script>
+function scrollGallery(direction) {
+  const gallery = document.querySelector('.gallery');
+  const scrollAmount = 300; // pixels per click
+  gallery.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
+
 
 
 
