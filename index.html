@@ -189,18 +189,108 @@
 </style>
 
 
-  <!-- Courses Preview -->
-  <section class="container">
+ <!-- Courses Section -->
+<section class="courses">
+  <div class="container">
     <h2>Our Courses</h2>
-    <div class="courses">
-      <div class="course-card"><h3>Junior College</h3><p>MPC, BiPC, CEC with digital classrooms & labs.</p></div>
-      <div class="course-card"><h3>Degree College</h3><p>B.A, B.Com, B.Sc with experienced faculty.</p></div>
-      <div class="course-card"><h3>Defence Academy</h3><p>Army, Navy, Air Force, Police coaching & training.</p></div>
+    <p class="section-subtitle">Providing top-quality education from Junior to Degree & Defence Training</p>
+
+    <div class="courses-grid">
+      <div class="course-card junior">
+        <span>📘</span>
+        <h3>Junior College</h3>
+        <p>Intermediate courses with focus on academics and foundation building.</p>
+        <a href="Courses.html" class="btn">Read More</a>
+      </div>
+
+      <div class="course-card degree">
+        <span>🎓</span>
+        <h3>Degree College</h3>
+        <p>Undergraduate programs in Science, Arts & Commerce with career support.</p>
+        <a href="Courses.html" class="btn">Read More</a>
+      </div>
+
+      <div class="course-card defence">
+        <span>🪖</span>
+        <h3>Defence Academy</h3>
+        <p>Special coaching for Defence exams – NDA, Army, Navy, Airforce & Police.</p>
+        <a href="Courses.html" class="btn">Read More</a>
+      </div>
     </div>
-    <div style="text-align:center;margin-top:20px;">
-      <a href="Courses.html" class="btn">View All Courses</a>
-    </div>
-  </section>
+  </div>
+</section>
+
+<style>
+/* Courses Section */
+.courses {
+  background: linear-gradient(135deg, #f9f9f9, #eef3ff);
+  padding: 60px 20px;
+  text-align: center;
+}
+.courses h2 {
+  color: var(--primary);
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.section-subtitle {
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.course-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.course-card span {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+.course-card h3 {
+  margin-bottom: 10px;
+  color: var(--primary);
+}
+.course-card p {
+  font-size: 0.95rem;
+  color: #444;
+  margin-bottom: 15px;
+}
+.course-card .btn {
+  display: inline-block;
+  padding: 8px 15px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+.course-card .btn:hover {
+  background: var(--accent);
+  color: #000;
+}
+
+/* Hover Animation */
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+.course-card.junior { border-top: 4px solid #007bff; }
+.course-card.degree { border-top: 4px solid #28a745; }
+.course-card.defence { border-top: 4px solid #ff5733; }
+</style>
+
 
   <!-- Gallery Preview -->
   <section class="container">
@@ -376,6 +466,7 @@
 
 </body>
 </html>
+
 
 
 
