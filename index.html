@@ -195,7 +195,7 @@
     <h2>Our Courses</h2>
     <p class="section-subtitle">Providing top-quality education from Junior to Degree & Defence Training</p>
 
-    <div class="courses-grid">
+    <div class="courses-row">
       <div class="course-card junior">
         <span>📘</span>
         <h3>Junior College</h3>
@@ -238,20 +238,23 @@
   color: #666;
 }
 
-.courses-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+/* Row layout (cards side by side) */
+.courses-row {
+  display: flex;
+  justify-content: center;
   gap: 25px;
+  flex-wrap: wrap; /* allows wrap on mobile */
 }
 
 .course-card {
   background: #fff;
+  flex: 1 1 300px;
+  max-width: 320px;
   padding: 25px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-  overflow: hidden;
+  text-align: center;
 }
 .course-card span {
   font-size: 40px;
@@ -281,15 +284,18 @@
   color: #000;
 }
 
-/* Hover Animation */
+/* Hover Effect */
 .course-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
+
+/* Colors for each course */
 .course-card.junior { border-top: 4px solid #007bff; }
 .course-card.degree { border-top: 4px solid #28a745; }
 .course-card.defence { border-top: 4px solid #ff5733; }
 </style>
+
 
 
   <!-- Gallery Preview -->
@@ -466,6 +472,7 @@
 
 </body>
 </html>
+
 
 
 
