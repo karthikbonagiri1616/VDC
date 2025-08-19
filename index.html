@@ -18,8 +18,8 @@
 
     /* Header */
     header{background:#fff;border-bottom:3px solid var(--primary);text-align:center;}
-    header img.banner{max-height:80px;margin:10px auto;}
-    header h1{font-size:1.6rem;color:var(--primary);margin:5px 0 10px;}
+    header img.banner{width:100%;max-height:200px;object-fit:cover;}
+    header h1{font-size:1.8rem;color:var(--primary);margin:10px 0;}
 
     /* Navbar */
     nav{background:var(--primary);}
@@ -76,33 +76,39 @@
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header (faculty-style) -->
   <header>
-    <img src="assets/img/d.jpg" alt="College Logo" class="banner">
-    
+    <img src="assets/img/Newlogo2.jpg" alt="College Banner" class="banner">
+    <h1>Vaagdevi Junior & Degree College, Boath</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="management.html">Management</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="Courses.html">Courses</a></li>
+        <li><a href="Notice board.html">Notice Board</a></li>
+        <li><a href="nss.html">NSS</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="Admission.html">Admission</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
   </header>
-
-  <!-- Navbar -->
-  <nav>
-    <ul>
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="management.html">Management</a></li>
-      <li><a href="faculty.html">Faculty</a></li>
-      <li><a href="Courses.html">Courses</a></li>
-      <li><a href="Notice board.html">Notice Board</a></li>
-      <li><a href="nss.html">NSS</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="Admission.html">Admission</a></li>
-      <li><a href="Contact.html">Contact</a></li>
-    </ul>
-  </nav>
 
   <!-- Hero Slider -->
   <section class="hero">
-   
-           <img src="assets/img/College.jpg" alt="College Banner 1">
-         
+    <div class="slides">
+      <img src="assets/img/College.jpg" alt="College Banner 1">
+      <img src="assets/img/campus1.jpg" alt="Campus Life">
+      <img src="assets/img/campus2.jpg" alt="Defence Training">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h2>Welcome to Vaagdevi Junior & Degree College</h2>
+      <p>Excellence in Education & Defence Coaching since 2005</p>
+      <a href="about.html" class="btn">Learn More</a>
+    </div>
   </section>
 
   <!-- About Preview -->
@@ -168,6 +174,3 @@
 
 </body>
 </html>
-
-
-
